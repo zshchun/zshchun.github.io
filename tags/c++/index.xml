@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>c&#43;&#43; on sh</title>
+    <link>https://zshchun.github.io/tags/c&#43;&#43;/</link>
+    <description>Recent content in c&#43;&#43; on sh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 14 Jul 2022 00:41:51 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>map과 unordered map의 차이</title>
+      <link>https://zshchun.github.io/posts/map%EA%B3%BC-unordered-map%EC%9D%98-%EC%B0%A8%EC%9D%B4/</link>
+      <pubDate>Thu, 14 Jul 2022 00:41:51 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/posts/map%EA%B3%BC-unordered-map%EC%9D%98-%EC%B0%A8%EC%9D%B4/</guid>
+      <description>map에 대해 잘못 알고 있었던 것이 있어서 정리한다. 요약 map은 순서를 보장하지만 unordered_map은 순서를 보장하지 않는다. unordere</description>
+    </item>
+    
+    <item>
+      <title>std::accumulate 사용시 유의사항</title>
+      <link>https://zshchun.github.io/posts/stdaccumulate-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%9C%A0%EC%9D%98%EC%82%AC%ED%95%AD/</link>
+      <pubDate>Sat, 04 Jun 2022 21:35:54 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/posts/stdaccumulate-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%9C%A0%EC%9D%98%EC%82%AC%ED%95%AD/</guid>
+      <description>std::accumulate() 결과가 예상과 달라서 조금 찾아보았다. 간단한 합을 구하는 코드를 살펴보자. #include &amp;lt;iostream&amp;gt; #include &amp;lt;numeric&amp;gt; #include &amp;lt;vector&amp;gt; using namespace std; int main(int argc, char **argv) { long long sum1 = 0; long long sum2 = 0; vector&amp;lt;long&amp;gt; v; v.push_back(1234567890); v.push_back(2345678901); v.push_back(3456789012); for (int i=0;i&amp;lt;v.size();i++) sum1 += v[i];</description>
+    </item>
+    
+  </channel>
+</rss>

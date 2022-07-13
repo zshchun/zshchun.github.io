@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on sh</title>
+    <link>https://zshchun.github.io/posts/</link>
+    <description>Recent content in Posts on sh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 14 Jul 2022 00:41:51 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>map과 unordered map의 차이</title>
+      <link>https://zshchun.github.io/posts/map%EA%B3%BC-unordered-map%EC%9D%98-%EC%B0%A8%EC%9D%B4/</link>
+      <pubDate>Thu, 14 Jul 2022 00:41:51 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/posts/map%EA%B3%BC-unordered-map%EC%9D%98-%EC%B0%A8%EC%9D%B4/</guid>
+      <description>map에 대해 잘못 알고 있었던 것이 있어서 정리한다. 요약 map은 순서를 보장하지만 unordered_map은 순서를 보장하지 않는다. unordere</description>
+    </item>
+    
+    <item>
+      <title>std::accumulate 사용시 유의사항</title>
+      <link>https://zshchun.github.io/posts/stdaccumulate-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%9C%A0%EC%9D%98%EC%82%AC%ED%95%AD/</link>
+      <pubDate>Sat, 04 Jun 2022 21:35:54 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/posts/stdaccumulate-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%9C%A0%EC%9D%98%EC%82%AC%ED%95%AD/</guid>
+      <description>std::accumulate() 결과가 예상과 달라서 조금 찾아보았다. 간단한 합을 구하는 코드를 살펴보자. #include &amp;lt;iostream&amp;gt; #include &amp;lt;numeric&amp;gt; #include &amp;lt;vector&amp;gt; using namespace std; int main(int argc, char **argv) { long long sum1 = 0; long long sum2 = 0; vector&amp;lt;long&amp;gt; v; v.push_back(1234567890); v.push_back(2345678901); v.push_back(3456789012); for (int i=0;i&amp;lt;v.size();i++) sum1 += v[i];</description>
+    </item>
+    
+    <item>
+      <title>Windows Terminal&#43;WSL2 에서 shift-enter 입력방법</title>
+      <link>https://zshchun.github.io/posts/windows-terminal-wsl2-%EC%97%90%EC%84%9C-shift-enter-%EC%9E%85%EB%A0%A5%EB%B0%A9%EB%B2%95/</link>
+      <pubDate>Tue, 31 May 2022 21:18:14 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/posts/windows-terminal-wsl2-%EC%97%90%EC%84%9C-shift-enter-%EC%9E%85%EB%A0%A5%EB%B0%A9%EB%B2%95/</guid>
+      <description>shift-enter, shift-alt-enter 키입력 추가 설정 - Json 파일 열기(settings.json)에서 다음을 추가한다. { &amp;#34;command&amp;#34;: {&amp;#34;action&amp;#34;: &amp;#34;sendInput&amp;#34;, &amp;#34;input&amp;#34;: &amp;#34;\u001b[13;2u&amp;#34; }, &amp;#34;keys&amp;#34;: &amp;#34;shift+enter&amp;#34; }, { &amp;#34;command&amp;#34;: {&amp;#34;action&amp;#34;: &amp;#34;sendInput&amp;#34;, &amp;#34;input&amp;#34;: &amp;#34;\u001b[13;5u&amp;#34; }, &amp;#34;keys&amp;#34;: &amp;#34;ctrl+enter&amp;#34; }, { &amp;#34;command&amp;#34;: {&amp;#34;action&amp;#34;: &amp;#34;sendInput&amp;#34;, &amp;#34;input&amp;#34;: &amp;#34;\u001b[13;6u&amp;#34; }, &amp;#34;keys&amp;#34;: &amp;#34;ctrl+shift+enter&amp;#34; },</description>
+    </item>
+    
+    <item>
+      <title>NET의 AES HW 가속 지원</title>
+      <link>https://zshchun.github.io/posts/net%EC%9D%98-aes-hw-%EA%B0%80%EC%86%8D-%EC%A7%80%EC%9B%90/</link>
+      <pubDate>Thu, 03 Mar 2022 01:24:30 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/posts/net%EC%9D%98-aes-hw-%EA%B0%80%EC%86%8D-%EC%A7%80%EC%9B%90/</guid>
+      <description>목적 대칭키 암호화 알고리즘인 AES는 AES-NI 같은 HW 가속 기능을 제공한다. 라이브러리의 AES HW 가속을 통해 프로그램의 수행속도를 줄일 수 있다. 가설 AES의 HW 가속은</description>
+    </item>
+    
+    <item>
+      <title>Text 압축 해제 속도 비교</title>
+      <link>https://zshchun.github.io/posts/text-%EC%95%95%EC%B6%95-%ED%95%B4%EC%A0%9C-%EC%86%8D%EB%8F%84-%EB%B9%84%EA%B5%90/</link>
+      <pubDate>Tue, 01 Mar 2022 21:50:13 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/posts/text-%EC%95%95%EC%B6%95-%ED%95%B4%EC%A0%9C-%EC%86%8D%EB%8F%84-%EB%B9%84%EA%B5%90/</guid>
+      <description>목적 대용량 텍스트의 압축 크기와 해제 속도의 수용가능한 절충점 찾기 multithreading 옵션과 압축 레벨을 이용하지 않고 기본 옵션으로 비교 압축 해제 속도만 측정 script #!/bin/bash testfile=test.txt declare -A ext_array=([Z]=compress [gz]=gzip [xz]=xz [lz]=lzip</description>
+    </item>
+    
+  </channel>
+</rss>
