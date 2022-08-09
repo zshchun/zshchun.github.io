@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on sh</title>
+    <link>https://zshchun.github.io/tags/</link>
+    <description>Recent content in Tags on sh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 10 Aug 2022 00:51:28 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux</title>
+      <link>https://zshchun.github.io/tags/linux/</link>
+      <pubDate>Wed, 10 Aug 2022 00:51:28 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>syscall</title>
+      <link>https://zshchun.github.io/tags/syscall/</link>
+      <pubDate>Wed, 10 Aug 2022 00:51:28 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/tags/syscall/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bithacks</title>
+      <link>https://zshchun.github.io/tags/bithacks/</link>
+      <pubDate>Mon, 08 Aug 2022 01:05:40 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/tags/bithacks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>c</title>
+      <link>https://zshchun.github.io/tags/c/</link>
+      <pubDate>Mon, 08 Aug 2022 01:05:40 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/tags/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>c&#43;&#43;</title>
+      <link>https://zshchun.github.io/tags/c&#43;&#43;/</link>
+      <pubDate>Thu, 14 Jul 2022 00:41:51 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stl</title>
+      <link>https://zshchun.github.io/tags/stl/</link>
+      <pubDate>Thu, 14 Jul 2022 00:41:51 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/tags/stl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://zshchun.github.io/tags/windows/</link>
+      <pubDate>Tue, 31 May 2022 21:18:14 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows terminal</title>
+      <link>https://zshchun.github.io/tags/windows-terminal/</link>
+      <pubDate>Tue, 31 May 2022 21:18:14 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/tags/windows-terminal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>c#</title>
+      <link>https://zshchun.github.io/tags/c#/</link>
+      <pubDate>Thu, 03 Mar 2022 01:24:30 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/tags/c#/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crypto</title>
+      <link>https://zshchun.github.io/tags/crypto/</link>
+      <pubDate>Thu, 03 Mar 2022 01:24:30 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/tags/crypto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>compression</title>
+      <link>https://zshchun.github.io/tags/compression/</link>
+      <pubDate>Tue, 01 Mar 2022 21:50:13 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/tags/compression/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

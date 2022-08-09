@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>c on sh</title>
+    <link>https://zshchun.github.io/tags/c/</link>
+    <description>Recent content in c on sh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 08 Aug 2022 01:05:40 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>유용한 bit 관련 함수</title>
+      <link>https://zshchun.github.io/posts/find-first-set/</link>
+      <pubDate>Mon, 08 Aug 2022 01:05:40 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/posts/find-first-set/</guid>
+      <description>bit의 위치나 갯수를 구하는 경우 gcc, clang등의 컴파일러는 내장</description>
+    </item>
+    
+  </channel>
+</rss>
