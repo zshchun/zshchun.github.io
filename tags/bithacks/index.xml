@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 08 Aug 2022 01:05:40 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/tags/bithacks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>유용한 bit 관련 함수</title>
-      <link>https://zshchun.github.io/posts/find-first-set/</link>
+      <link>https://zshchun.github.io/posts/%EC%9C%A0%EC%9A%A9%ED%95%9C-bit-%EA%B4%80%EB%A0%A8-%ED%95%A8%EC%88%98/</link>
       <pubDate>Mon, 08 Aug 2022 01:05:40 +0900</pubDate>
       
-      <guid>https://zshchun.github.io/posts/find-first-set/</guid>
+      <guid>https://zshchun.github.io/posts/%EC%9C%A0%EC%9A%A9%ED%95%9C-bit-%EA%B4%80%EB%A0%A8-%ED%95%A8%EC%88%98/</guid>
       <description>bit의 위치나 갯수를 구하는 경우 gcc, clang등의 컴파일러는 내장</description>
     </item>
     

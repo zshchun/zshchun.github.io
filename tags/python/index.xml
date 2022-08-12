@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 10 Aug 2022 21:25:40 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>큰 숫자의 구분자</title>
-      <link>https://zshchun.github.io/posts/digit-separator/</link>
+      <link>https://zshchun.github.io/posts/%ED%81%B0-%EC%88%AB%EC%9E%90%EC%9D%98-%EA%B5%AC%EB%B6%84%EC%9E%90/</link>
       <pubDate>Wed, 10 Aug 2022 21:25:40 +0900</pubDate>
       
-      <guid>https://zshchun.github.io/posts/digit-separator/</guid>
+      <guid>https://zshchun.github.io/posts/%ED%81%B0-%EC%88%AB%EC%9E%90%EC%9D%98-%EA%B5%AC%EB%B6%84%EC%9E%90/</guid>
       <description>C++에서는 큰 숫자에서 가독성을 위해 구분자를 사용할 수 있다. C+</description>
     </item>
     

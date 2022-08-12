@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://zshchun.github.io/posts/sh-vs-bash/</loc>
+    <loc>https://zshchun.github.io/posts/bin/sh%EC%99%80-/bin/bash%EC%9D%98-%EC%B0%A8%EC%9D%B4/</loc>
     <lastmod>2022-08-11T23:55:03+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -42,7 +42,7 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://zshchun.github.io/posts/digit-separator/</loc>
+    <loc>https://zshchun.github.io/posts/%ED%81%B0-%EC%88%AB%EC%9E%90%EC%9D%98-%EA%B5%AC%EB%B6%84%EC%9E%90/</loc>
     <lastmod>2022-08-10T21:25:40+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -52,7 +52,7 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://zshchun.github.io/posts/linux-syscall-list/</loc>
+    <loc>https://zshchun.github.io/posts/linux-syscall-list-x86/arm/</loc>
     <lastmod>2022-08-10T00:51:28+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -72,12 +72,12 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://zshchun.github.io/posts/find-first-set/</loc>
+    <loc>https://zshchun.github.io/posts/%EC%9C%A0%EC%9A%A9%ED%95%9C-bit-%EA%B4%80%EB%A0%A8-%ED%95%A8%EC%88%98/</loc>
     <lastmod>2022-08-08T01:05:40+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://zshchun.github.io/posts/map-vs-unordered_map/</loc>
+    <loc>https://zshchun.github.io/posts/map%EA%B3%BC-unordered-map%EC%9D%98-%EC%B0%A8%EC%9D%B4/</loc>
     <lastmod>2022-07-14T00:41:51+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -87,7 +87,7 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://zshchun.github.io/posts/stl-accumulate-type/</loc>
+    <loc>https://zshchun.github.io/posts/stdaccumulate-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%9C%A0%EC%9D%98%EC%82%AC%ED%95%AD/</loc>
     <lastmod>2022-06-04T21:35:54+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -102,7 +102,7 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://zshchun.github.io/posts/windows-terminal-input-shift-enter/</loc>
+    <loc>https://zshchun.github.io/posts/windows-terminal-wsl2-%EC%97%90%EC%84%9C-shift-enter-%EC%9E%85%EB%A0%A5%EB%B0%A9%EB%B2%95/</loc>
     <lastmod>2022-05-31T21:18:14+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -117,7 +117,7 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://zshchun.github.io/posts/csharp-aesni-support/</loc>
+    <loc>https://zshchun.github.io/posts/net%EC%9D%98-aes-hw-%EA%B0%80%EC%86%8D-%EC%A7%80%EC%9B%90/</loc>
     <lastmod>2022-03-03T01:24:30+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -132,7 +132,7 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://zshchun.github.io/posts/comparison-of-decompression/</loc>
+    <loc>https://zshchun.github.io/posts/text-%EC%95%95%EC%B6%95-%ED%95%B4%EC%A0%9C-%EC%86%8D%EB%8F%84-%EB%B9%84%EA%B5%90/</loc>
     <lastmod>2022-03-01T21:50:13+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
