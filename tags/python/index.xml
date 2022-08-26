@@ -6,7 +6,16 @@
     <description>Recent content in python on sh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 10 Aug 2022 21:25:40 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Aug 2022 22:09:10 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>파이썬 import time 최적화</title>
+      <link>https://zshchun.github.io/posts/%ED%8C%8C%EC%9D%B4%EC%8D%AC-import-time-%EC%B5%9C%EC%A0%81%ED%99%94/</link>
+      <pubDate>Fri, 26 Aug 2022 22:09:10 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/posts/%ED%8C%8C%EC%9D%B4%EC%8D%AC-import-time-%EC%B5%9C%EC%A0%81%ED%99%94/</guid>
+      <description>파이썬 스크립트에서 시작시간이 좀 느려서 최적화를 해보았다. 파이썬</description>
+    </item>
+    
     <item>
       <title>큰 숫자의 구분자</title>
       <link>https://zshchun.github.io/posts/%ED%81%B0-%EC%88%AB%EC%9E%90%EC%9D%98-%EA%B5%AC%EB%B6%84%EC%9E%90/</link>
