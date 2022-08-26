@@ -22,7 +22,7 @@
       <pubDate>Thu, 11 Aug 2022 23:55:03 +0900</pubDate>
       
       <guid>https://zshchun.github.io/posts/bin/sh%EC%99%80-/bin/bash%EC%9D%98-%EC%B0%A8%EC%9D%B4/</guid>
-      <description>bash shell 대신 /bin/sh를 사용해야 하는 경우가 있다. sh와 bas</description>
+      <description>확장된 기능을 제공하는 /bin/bash 대신 /bin/sh를 사용해야 하는 경우가</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@
       <pubDate>Wed, 10 Aug 2022 00:51:28 +0900</pubDate>
       
       <guid>https://zshchun.github.io/posts/linux-syscall-list-x86/arm/</guid>
-      <description>Shellcode를 직접 만들거나 Linux syscall을 직접 핸들링</description>
+      <description>특수한 상환에서 표준 C 라이브러리를 통하지 않고 linux syscall을</description>
     </item>
     
     <item>
@@ -49,7 +49,7 @@
       <pubDate>Mon, 08 Aug 2022 01:05:40 +0900</pubDate>
       
       <guid>https://zshchun.github.io/posts/%EC%9C%A0%EC%9A%A9%ED%95%9C-bit-%EA%B4%80%EB%A0%A8-%ED%95%A8%EC%88%98/</guid>
-      <description>bit의 위치나 갯수를 구하는 경우 gcc, clang등의 컴파일러는 내장</description>
+      <description>변수에서 Bit에서 0이나 1의 위치 또는 갯수를 구하는 경우 컴파일러</description>
     </item>
     
     <item>

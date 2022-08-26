@@ -30,7 +30,7 @@
 <meta name=twitter:title content="큰 숫자의 구분자">
 <meta name=twitter:description content="C++에서는 큰 숫자에서 가독성을 위해 구분자를 사용할 수 있다. C+">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zshchun.github.io/posts/"},{"@type":"ListItem","position":2,"name":"큰 숫자의 구분자","item":"https://zshchun.github.io/posts/%ED%81%B0-%EC%88%AB%EC%9E%90%EC%9D%98-%EA%B5%AC%EB%B6%84%EC%9E%90/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"큰 숫자의 구분자","name":"큰 숫자의 구분자","description":"C++에서는 큰 숫자에서 가독성을 위해 구분자를 사용할 수 있다. C+","keywords":["c++","python"],"articleBody":"C++에서는 큰 숫자에서 가독성을 위해 구분자를 사용할 수 있다.\nC++는 C++14부터 ‘(single quote)를 구분자로 사용할 수 있다.\n1// g++ --std=c++14 test.cpp || clang++ --std=c++14 test.cpp 2#include 3 4int main() { 5 int i = 1'234'567'890; 6 std::cout  i  std::endl; 7 return 0; 8} Python은 3.6 버전부터 _(underscore)를 구분자로 사용할 수 있다.\n1i = 1_234_567_890 2print(i) 결과 1234567890 References C++\n cppreference Integer literal Stackoverflow C++  Python\n Stackoverflow Python PEP-515  ","wordCount":"141","inLanguage":"en","datePublished":"2022-08-10T21:25:40+09:00","dateModified":"2022-08-10T21:25:40+09:00","author":{"@type":"Person","name":"Seunghwan Chun"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zshchun.github.io/posts/%ED%81%B0-%EC%88%AB%EC%9E%90%EC%9D%98-%EA%B5%AC%EB%B6%84%EC%9E%90/"},"publisher":{"@type":"Organization","name":"sh","logo":{"@type":"ImageObject","url":"https://zshchun.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"큰 숫자의 구분자","name":"큰 숫자의 구분자","description":"C++에서는 큰 숫자에서 가독성을 위해 구분자를 사용할 수 있다. C+","keywords":["c++","python"],"articleBody":"C++에서는 큰 숫자에서 가독성을 위해 구분자를 사용할 수 있다.\nC++는 C++14부터 ‘(single quote)를 구분자로 사용할 수 있다.\n1// g++ --std=c++14 test.cpp || clang++ --std=c++14 test.cpp 2#include 3 4int main() { 5 int i = 1'234'567'890; 6 std::cout  i  std::endl; 7 return 0; 8} Python은 3.6 버전부터 _(underscore)를 구분자로 사용할 수 있다.\n1i = 1_234_567_890 2print(i) 결과 1234567890 References  cppreference Integer literal Stackoverflow C++ PEP-515 Stackoverflow Python  ","wordCount":"139","inLanguage":"en","datePublished":"2022-08-10T21:25:40+09:00","dateModified":"2022-08-10T21:25:40+09:00","author":{"@type":"Person","name":"Seunghwan Chun"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zshchun.github.io/posts/%ED%81%B0-%EC%88%AB%EC%9E%90%EC%9D%98-%EA%B5%AC%EB%B6%84%EC%9E%90/"},"publisher":{"@type":"Organization","name":"sh","logo":{"@type":"ImageObject","url":"https://zshchun.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -69,7 +69,7 @@
 <h1 class=post-title>
 큰 숫자의 구분자
 </h1>
-<div class=post-meta><span title="2022-08-10 21:25:40 +0900 KST">2022/08/10</span>&nbsp;·&nbsp;141 words&nbsp;·&nbsp;Seunghwan Chun
+<div class=post-meta><span title="2022-08-10 21:25:40 +0900 KST">2022/08/10</span>&nbsp;·&nbsp;139 words&nbsp;·&nbsp;Seunghwan Chun
 </div>
 </header>
 <div class=post-content><p>C++에서는 큰 숫자에서 가독성을 위해 구분자를 사용할 수 있다.</p>
@@ -88,15 +88,11 @@
 </code></pre></div><h1 id=결과>결과<a hidden class=anchor aria-hidden=true href=#결과>#</a></h1>
 <pre tabindex=0><code>1234567890
 </code></pre><h1 id=references>References<a hidden class=anchor aria-hidden=true href=#references>#</a></h1>
-<p>C++</p>
 <ul>
 <li><a href=https://en.cppreference.com/w/cpp/language/integer_literal>cppreference Integer literal</a></li>
 <li><a href=https://stackoverflow.com/questions/50559636/is-there-a-way-to-write-a-large-number-in-c-source-code-with-spaces-to-make-it>Stackoverflow C++</a></li>
-</ul>
-<p>Python</p>
-<ul>
-<li><a href=https://stackoverflow.com/questions/54009778/what-do-underscores-in-a-number-mean>Stackoverflow Python</a></li>
 <li><a href=https://peps.python.org/pep-0515/>PEP-515</a></li>
+<li><a href=https://stackoverflow.com/questions/54009778/what-do-underscores-in-a-number-mean>Stackoverflow Python</a></li>
 </ul>
 </div>
 <footer class=post-footer>

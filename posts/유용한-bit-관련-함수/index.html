@@ -4,8 +4,8 @@
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
 <title>유용한 bit 관련 함수 | sh</title>
-<meta name=keywords content="c,bithacks">
-<meta name=description content="bit의 위치나 갯수를 구하는 경우 gcc, clang등의 컴파일러는 내장">
+<meta name=keywords content="c,assembly,bithacks">
+<meta name=description content="변수에서 Bit에서 0이나 1의 위치 또는 갯수를 구하는 경우 컴파일러">
 <meta name=author content="Seunghwan Chun">
 <link rel=canonical href=https://zshchun.github.io/posts/%EC%9C%A0%EC%9A%A9%ED%95%9C-bit-%EA%B4%80%EB%A0%A8-%ED%95%A8%EC%88%98/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.0d2ee8bb1bc6a8196da0f4036d74cedc1fb80d74ab9f6160fc44670f9b85dd9c.css integrity="sha256-DS7ouxvGqBltoPQDbXTO3B+4DXSrn2Fg/ERnD5uF3Zw=" rel="preload stylesheet" as=style>
@@ -21,16 +21,16 @@
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-228892904-1','auto'),ga('set','anonymizeIp',!0),ga('send','pageview'))</script><meta property="og:title" content="유용한 bit 관련 함수">
-<meta property="og:description" content="bit의 위치나 갯수를 구하는 경우 gcc, clang등의 컴파일러는 내장">
+<meta property="og:description" content="변수에서 Bit에서 0이나 1의 위치 또는 갯수를 구하는 경우 컴파일러">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://zshchun.github.io/posts/%EC%9C%A0%EC%9A%A9%ED%95%9C-bit-%EA%B4%80%EB%A0%A8-%ED%95%A8%EC%88%98/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-08-08T01:05:40+09:00">
 <meta property="article:modified_time" content="2022-08-08T01:05:40+09:00"><meta property="og:site_name" content="sh">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="유용한 bit 관련 함수">
-<meta name=twitter:description content="bit의 위치나 갯수를 구하는 경우 gcc, clang등의 컴파일러는 내장">
+<meta name=twitter:description content="변수에서 Bit에서 0이나 1의 위치 또는 갯수를 구하는 경우 컴파일러">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zshchun.github.io/posts/"},{"@type":"ListItem","position":2,"name":"유용한 bit 관련 함수","item":"https://zshchun.github.io/posts/%EC%9C%A0%EC%9A%A9%ED%95%9C-bit-%EA%B4%80%EB%A0%A8-%ED%95%A8%EC%88%98/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"유용한 bit 관련 함수","name":"유용한 bit 관련 함수","description":"bit의 위치나 갯수를 구하는 경우 gcc, clang등의 컴파일러는 내장","keywords":["c","bithacks"],"articleBody":"bit의 위치나 갯수를 구하는 경우 gcc, clang등의 컴파일러는 내장 비트 연산 함수를 지원한다.\n간단한 코드를 살펴보자.\n1#include 2 3// for i in range(22): print('\"{}\", '.format(re.sub(r'(\\d{4})', r'\\1 ', bin(i)[2:].rjust(32, '0')).rstrip()), end='') 4char *bits[] = { \"0000 0000 0000 0000 0000 0000 0000 0000\", \"0000 0000 0000 0000 0000 0000 0000 0001\", \"0000 0000 0000 0000 0000 0000 0000 0010\", \"0000 0000 0000 0000 0000 0000 0000 0011\", \"0000 0000 0000 0000 0000 0000 0000 0100\", \"0000 0000 0000 0000 0000 0000 0000 0101\", \"0000 0000 0000 0000 0000 0000 0000 0110\", \"0000 0000 0000 0000 0000 0000 0000 0111\", \"0000 0000 0000 0000 0000 0000 0000 1000\", \"0000 0000 0000 0000 0000 0000 0000 1001\", \"0000 0000 0000 0000 0000 0000 0000 1010\", \"0000 0000 0000 0000 0000 0000 0000 1011\", \"0000 0000 0000 0000 0000 0000 0000 1100\", \"0000 0000 0000 0000 0000 0000 0000 1101\", \"0000 0000 0000 0000 0000 0000 0000 1110\", \"0000 0000 0000 0000 0000 0000 0000 1111\", \"0000 0000 0000 0000 0000 0000 0001 0000\", \"0000 0000 0000 0000 0000 0000 0001 0001\", \"0000 0000 0000 0000 0000 0000 0001 0010\", \"0000 0000 0000 0000 0000 0000 0001 0011\", \"0000 0000 0000 0000 0000 0000 0001 0100\", \"0000 0000 0000 0000 0000 0000 0001 0101\" }; 5 6int main() { 7\tfor (int i=0;i21;i++) { 8\tprintf(\"%s clz: %d ffs: %d popcount: %d\\n\", \\ 9\tbits[i], \\ 10\t__builtin_clz(i), \\ 11\t__builtin_ffs(i), \\ 12\t__builtin_popcount(i)); 13\t} 14\treturn 0; 15} Output 0000 0000 0000 0000 0000 0000 0000 0000 clz: 31 ffs: 0 popcount: 0 0000 0000 0000 0000 0000 0000 0000 0001 clz: 31 ffs: 1 popcount: 1 0000 0000 0000 0000 0000 0000 0000 0010 clz: 30 ffs: 2 popcount: 1 0000 0000 0000 0000 0000 0000 0000 0011 clz: 30 ffs: 1 popcount: 2 0000 0000 0000 0000 0000 0000 0000 0100 clz: 29 ffs: 3 popcount: 1 0000 0000 0000 0000 0000 0000 0000 0101 clz: 29 ffs: 1 popcount: 2 0000 0000 0000 0000 0000 0000 0000 0110 clz: 29 ffs: 2 popcount: 2 0000 0000 0000 0000 0000 0000 0000 0111 clz: 29 ffs: 1 popcount: 3 0000 0000 0000 0000 0000 0000 0000 1000 clz: 28 ffs: 4 popcount: 1 0000 0000 0000 0000 0000 0000 0000 1001 clz: 28 ffs: 1 popcount: 2 0000 0000 0000 0000 0000 0000 0000 1010 clz: 28 ffs: 2 popcount: 2 0000 0000 0000 0000 0000 0000 0000 1011 clz: 28 ffs: 1 popcount: 3 0000 0000 0000 0000 0000 0000 0000 1100 clz: 28 ffs: 3 popcount: 2 0000 0000 0000 0000 0000 0000 0000 1101 clz: 28 ffs: 1 popcount: 3 0000 0000 0000 0000 0000 0000 0000 1110 clz: 28 ffs: 2 popcount: 3 0000 0000 0000 0000 0000 0000 0000 1111 clz: 28 ffs: 1 popcount: 4 0000 0000 0000 0000 0000 0000 0001 0000 clz: 27 ffs: 5 popcount: 1 0000 0000 0000 0000 0000 0000 0001 0001 clz: 27 ffs: 1 popcount: 2 0000 0000 0000 0000 0000 0000 0001 0010 clz: 27 ffs: 2 popcount: 2 0000 0000 0000 0000 0000 0000 0001 0011 clz: 27 ffs: 1 popcount: 3 0000 0000 0000 0000 0000 0000 0001 0100 clz: 27 ffs: 3 popcount: 2 __builtin_clz : 상위 비트(MSB)부터 0의 갯수, 입력 0에 대해 보장하지 않음 (undefined) __builtin_ffs : 하위 비트(LSB)부터 첫번째 1의 위치, 못찾으면 0 __builtin_popcount : 비트 1의 갯수\nclz는 0의 경우도 1인 경우도 31인 것을 볼 수 있다. 0인 경우 처리를 해야한다.\n이 외에 ctz 등의 함수도 있다.\n__builtin_ctz : 하위 비트(LSB)부터 0의 갯수, 입력 0에 대해 보장하지 않음 (undefined)\nAssembly 1# gcc -O2 -S -march=native test.c 2... 3 tzcntl %ebx, %r8d 4 popcntl %ebx, %r9d 5 lzcntl %ebx, %ecx 1# gcc -O2 -m32 -S test.c 2... 3 pushl %esi 4 call __popcountsi2@PLT 5 xorl %edx, %edx 6 addl $16, %esp 7 rep bsfl %esi, %edx 8 addl $1, %edx 9 bsrl %esi, %ecx 10 xorl $31, %ecx 1# aarch64-linux-gnu-gcc -O2 -S test.c 2... 3 cnt v0.8b, v0.8b 4 rbit w4, w19 5 clz w4, w4 6 clz w3, w19 7 add w4, w4, 1 8 add x19, x19, 1 9 addv b0, v0.8b  x86 : bsf, bsr x86_64 : tzcnt, popcnt, lzcnt arm64 : clz, cnt  등의 어셈블리 명령어가 사용되는 것을 볼 수 있다.\n이처럼 아키텍처마다 instruction 레벨에서 bit 연산을 지원 한다.\n기타 위의 내장 함수들은 32비트 기준이며 long 타입과 long long 타입은 __builtin_ffsll과 같이 l, ll 접미사를 붙인다.\n*nix 계열에서는 보통 LP64 모델을 사용하며 long 또는 long long을 사용하면 64비트가 된다.\n1 대신 0을 찾는등 반대의 경우는 Bitwise NOT(~) 연산으로 비트를 뒤집으면 된다.\n그 외에도 아래의 popcount 구현처럼 많은 bit hack들이 존재한다.\n1int swar(uint32_t i) { 2 i = i - ((i  1) \u0026 0x55555555); 3 i = (i \u0026 0x33333333) + ((i  2) \u0026 0x33333333); 4 return (((i + (i  4)) \u0026 0x0F0F0F0F) * 0x01010101)  24; 5} 더 관심이 있다면 Bit Twiddling Hacks이나 Linux 소스코드 등 에서 더 많은 것을 찾아볼 수 있다.\nReferences Wiki: Find first set GCC builtin extensions\n","wordCount":"1105","inLanguage":"en","datePublished":"2022-08-08T01:05:40+09:00","dateModified":"2022-08-08T01:05:40+09:00","author":{"@type":"Person","name":"Seunghwan Chun"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zshchun.github.io/posts/%EC%9C%A0%EC%9A%A9%ED%95%9C-bit-%EA%B4%80%EB%A0%A8-%ED%95%A8%EC%88%98/"},"publisher":{"@type":"Organization","name":"sh","logo":{"@type":"ImageObject","url":"https://zshchun.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"유용한 bit 관련 함수","name":"유용한 bit 관련 함수","description":"변수에서 Bit에서 0이나 1의 위치 또는 갯수를 구하는 경우 컴파일러","keywords":["c","assembly","bithacks"],"articleBody":"변수에서 Bit에서 0이나 1의 위치 또는 갯수를 구하는 경우 컴파일러는 내장 함수들을 지원한다.\nGCC나 Clang에서 간단한 코드를 살펴보자.\n1#include 2 3// for i in range(22): print('\"{}\", '.format(re.sub(r'(\\d{4})', r'\\1 ', bin(i)[2:].rjust(32, '0')).rstrip()), end='') 4char *bits[] = { \"0000 0000 0000 0000 0000 0000 0000 0000\", \"0000 0000 0000 0000 0000 0000 0000 0001\", \"0000 0000 0000 0000 0000 0000 0000 0010\", \"0000 0000 0000 0000 0000 0000 0000 0011\", \"0000 0000 0000 0000 0000 0000 0000 0100\", \"0000 0000 0000 0000 0000 0000 0000 0101\", \"0000 0000 0000 0000 0000 0000 0000 0110\", \"0000 0000 0000 0000 0000 0000 0000 0111\", \"0000 0000 0000 0000 0000 0000 0000 1000\", \"0000 0000 0000 0000 0000 0000 0000 1001\", \"0000 0000 0000 0000 0000 0000 0000 1010\", \"0000 0000 0000 0000 0000 0000 0000 1011\", \"0000 0000 0000 0000 0000 0000 0000 1100\", \"0000 0000 0000 0000 0000 0000 0000 1101\", \"0000 0000 0000 0000 0000 0000 0000 1110\", \"0000 0000 0000 0000 0000 0000 0000 1111\", \"0000 0000 0000 0000 0000 0000 0001 0000\", \"0000 0000 0000 0000 0000 0000 0001 0001\", \"0000 0000 0000 0000 0000 0000 0001 0010\", \"0000 0000 0000 0000 0000 0000 0001 0011\", \"0000 0000 0000 0000 0000 0000 0001 0100\", \"0000 0000 0000 0000 0000 0000 0001 0101\" }; 5 6int main() { 7\tfor (int i=0;i21;i++) { 8\tprintf(\"%s clz: %d ffs: %d popcount: %d\\n\", \\ 9\tbits[i], \\ 10\t__builtin_clz(i), \\ 11\t__builtin_ffs(i), \\ 12\t__builtin_popcount(i)); 13\t} 14\treturn 0; 15} Output 0000 0000 0000 0000 0000 0000 0000 0000 clz: 31 ffs: 0 popcount: 0 0000 0000 0000 0000 0000 0000 0000 0001 clz: 31 ffs: 1 popcount: 1 0000 0000 0000 0000 0000 0000 0000 0010 clz: 30 ffs: 2 popcount: 1 0000 0000 0000 0000 0000 0000 0000 0011 clz: 30 ffs: 1 popcount: 2 0000 0000 0000 0000 0000 0000 0000 0100 clz: 29 ffs: 3 popcount: 1 0000 0000 0000 0000 0000 0000 0000 0101 clz: 29 ffs: 1 popcount: 2 0000 0000 0000 0000 0000 0000 0000 0110 clz: 29 ffs: 2 popcount: 2 0000 0000 0000 0000 0000 0000 0000 0111 clz: 29 ffs: 1 popcount: 3 0000 0000 0000 0000 0000 0000 0000 1000 clz: 28 ffs: 4 popcount: 1 0000 0000 0000 0000 0000 0000 0000 1001 clz: 28 ffs: 1 popcount: 2 0000 0000 0000 0000 0000 0000 0000 1010 clz: 28 ffs: 2 popcount: 2 0000 0000 0000 0000 0000 0000 0000 1011 clz: 28 ffs: 1 popcount: 3 0000 0000 0000 0000 0000 0000 0000 1100 clz: 28 ffs: 3 popcount: 2 0000 0000 0000 0000 0000 0000 0000 1101 clz: 28 ffs: 1 popcount: 3 0000 0000 0000 0000 0000 0000 0000 1110 clz: 28 ffs: 2 popcount: 3 0000 0000 0000 0000 0000 0000 0000 1111 clz: 28 ffs: 1 popcount: 4 0000 0000 0000 0000 0000 0000 0001 0000 clz: 27 ffs: 5 popcount: 1 0000 0000 0000 0000 0000 0000 0001 0001 clz: 27 ffs: 1 popcount: 2 0000 0000 0000 0000 0000 0000 0001 0010 clz: 27 ffs: 2 popcount: 2 0000 0000 0000 0000 0000 0000 0001 0011 clz: 27 ffs: 1 popcount: 3 0000 0000 0000 0000 0000 0000 0001 0100 clz: 27 ffs: 3 popcount: 2 사용한 내장 함수들이다.\n __builtin_clz : 상위 비트(MSB)부터 0의 갯수, 입력 0에 대해 보장하지 않음 (undefined) \\ __builtin_ffs : 하위 비트(LSB)부터 첫번째 1의 위치, 못찾으면 0 \\ __builtin_popcount : 비트 1의 갯수  clz는 0의 경우도 1인 경우도 31인 것을 볼 수 있다. 0인 경우 처리를 해야한다.\n이 외에 ctz 등의 함수도 있다.\n __builtin_ctz : 하위 비트(LSB)부터 0의 갯수, 입력 0에 대해 보장하지 않음 (undefined)  Assembly 내장 함수들이 어셈블리에서 어떻게 처리되는지 살펴보자.\n1# gcc -O2 -S -march=native test.c 2... 3 tzcntl %ebx, %r8d 4 popcntl %ebx, %r9d 5 lzcntl %ebx, %ecx 1# gcc -O2 -m32 -S test.c 2... 3 pushl %esi 4 call __popcountsi2@PLT 5 xorl %edx, %edx 6 addl $16, %esp 7 rep bsfl %esi, %edx 8 addl $1, %edx 9 bsrl %esi, %ecx 10 xorl $31, %ecx 1# aarch64-linux-gnu-gcc -O2 -S test.c 2... 3 cnt v0.8b, v0.8b 4 rbit w4, w19 5 clz w4, w4 6 clz w3, w19 7 add w4, w4, 1 8 add x19, x19, 1 9 addv b0, v0.8b 아키텍처에 따라 다음 어셈블리 명령어를 사용하는 것을 확인할 수 있다.\n x86 : bsf, bsr x86_64 : tzcnt, popcnt, lzcnt arm64 : clz, cnt  이처럼 아키텍처마다 instruction 레벨에서 bit 연산을 지원 한다.\n기타 위의 내장 함수들은 32비트 기준이며 long 타입과 long long 타입은 __builtin_ffsll과 같이 l, ll 접미사를 붙여줘야 한다.\n*nix 계열에서는 LP64 모델을 사용하며 L, LL, ULL 등의 접미사를 사용하면 64비트가 된다.\n1 대신 0을 찾는등 반대의 경우는 Bitwise NOT(~) 연산으로 비트를 뒤집으면 된다.\n그 외에도 아래의 popcount 구현처럼 많은 bit hack들이 존재한다.\n1int swar(uint32_t i) { 2 i = i - ((i  1) \u0026 0x55555555); 3 i = (i \u0026 0x33333333) + ((i  2) \u0026 0x33333333); 4 return (((i + (i  4)) \u0026 0x0F0F0F0F) * 0x01010101)  24; 5} 더 관심이 있다면 Bit Twiddling Hacks이나 Linux 소스코드 등 에서 더 많은 것을 찾아볼 수 있다.\nReferences Wiki: Find first set GCC builtin extensions\n","wordCount":"1164","inLanguage":"en","datePublished":"2022-08-08T01:05:40+09:00","dateModified":"2022-08-08T01:05:40+09:00","author":{"@type":"Person","name":"Seunghwan Chun"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zshchun.github.io/posts/%EC%9C%A0%EC%9A%A9%ED%95%9C-bit-%EA%B4%80%EB%A0%A8-%ED%95%A8%EC%88%98/"},"publisher":{"@type":"Organization","name":"sh","logo":{"@type":"ImageObject","url":"https://zshchun.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -69,11 +69,11 @@
 <h1 class=post-title>
 유용한 bit 관련 함수
 </h1>
-<div class=post-meta><span title="2022-08-08 01:05:40 +0900 KST">2022/08/08</span>&nbsp;·&nbsp;1105 words&nbsp;·&nbsp;Seunghwan Chun
+<div class=post-meta><span title="2022-08-08 01:05:40 +0900 KST">2022/08/08</span>&nbsp;·&nbsp;1164 words&nbsp;·&nbsp;Seunghwan Chun
 </div>
 </header>
-<div class=post-content><p>bit의 위치나 갯수를 구하는 경우 gcc, clang등의 컴파일러는 내장 비트 연산 함수를 지원한다.</p>
-<p>간단한 코드를 살펴보자.</p>
+<div class=post-content><p>변수에서 Bit에서 0이나 1의 위치 또는 갯수를 구하는 경우 컴파일러는 내장 함수들을 지원한다.</p>
+<p>GCC나 Clang에서 간단한 코드를 살펴보자.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-c data-lang=c><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span><span style=color:#75715e></span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span><span style=color:#75715e>// for i in range(22): print(&#39;&#34;{}&#34;, &#39;.format(re.sub(r&#39;(\d{4})&#39;, r&#39;\1 &#39;, bin(i)[2:].rjust(32, &#39;0&#39;)).rstrip()), end=&#39;&#39;)
@@ -111,13 +111,19 @@
 0000 0000 0000 0000 0000 0000 0001 0010 clz: 27 ffs: 2 popcount: 2
 0000 0000 0000 0000 0000 0000 0001 0011 clz: 27 ffs: 1 popcount: 3
 0000 0000 0000 0000 0000 0000 0001 0100 clz: 27 ffs: 3 popcount: 2
-</code></pre><p><strong>__builtin_clz</strong> : 상위 비트(MSB)부터 0의 갯수, 입력 0에 대해 보장하지 않음 (undefined) <br>
-<strong>__builtin_ffs</strong> : 하위 비트(LSB)부터 첫번째 1의 위치, 못찾으면 0 <br>
-<strong>__builtin_popcount</strong> : 비트 1의 갯수</p>
+</code></pre><p>사용한 내장 함수들이다.</p>
+<ol>
+<li><strong>__builtin_clz</strong> : 상위 비트(MSB)부터 0의 갯수, 입력 0에 대해 보장하지 않음 (undefined) \</li>
+<li><strong>__builtin_ffs</strong> : 하위 비트(LSB)부터 첫번째 1의 위치, 못찾으면 0 \</li>
+<li><strong>__builtin_popcount</strong> : 비트 1의 갯수</li>
+</ol>
 <p>clz는 0의 경우도 1인 경우도 31인 것을 볼 수 있다. 0인 경우 처리를 해야한다.</p>
 <p>이 외에 ctz 등의 함수도 있다.</p>
-<p><strong>__builtin_ctz</strong> : 하위 비트(LSB)부터 0의 갯수, 입력 0에 대해 보장하지 않음 (undefined)</p>
+<ul>
+<li><strong>__builtin_ctz</strong> : 하위 비트(LSB)부터 0의 갯수, 입력 0에 대해 보장하지 않음 (undefined)</li>
+</ul>
 <h1 id=assembly>Assembly<a hidden class=anchor aria-hidden=true href=#assembly>#</a></h1>
+<p>내장 함수들이 어셈블리에서 어떻게 처리되는지 살펴보자.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-asm data-lang=asm><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#75715e># gcc -O2 -S -march=native test.c
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span><span style=color:#75715e></span><span style=color:#a6e22e>...</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>        <span style=color:#a6e22e>tzcntl</span>  %ebx, %r8d
@@ -142,16 +148,16 @@
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7</span>        <span style=color:#a6e22e>add</span>     <span style=color:#66d9ef>w4</span>, <span style=color:#66d9ef>w4</span>, <span style=color:#ae81ff>1</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8</span>        <span style=color:#a6e22e>add</span>     <span style=color:#66d9ef>x19</span>, <span style=color:#66d9ef>x19</span>, <span style=color:#ae81ff>1</span>
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">9</span>        <span style=color:#a6e22e>addv</span>    <span style=color:#66d9ef>b0</span>, <span style=color:#66d9ef>v0.8b</span>
-</code></pre></div><ul>
+</code></pre></div><p>아키텍처에 따라 다음 어셈블리 명령어를 사용하는 것을 확인할 수 있다.</p>
+<ul>
 <li>x86 : bsf, bsr</li>
 <li>x86_64 : tzcnt, popcnt, lzcnt</li>
 <li>arm64 : clz, cnt</li>
 </ul>
-<p>등의 어셈블리 명령어가 사용되는 것을 볼 수 있다.</p>
 <p>이처럼 아키텍처마다 instruction 레벨에서 <a href=https://en.wikipedia.org/wiki/Find_first_set#Hardware_support>bit 연산을 지원</a> 한다.</p>
 <h1 id=기타>기타<a hidden class=anchor aria-hidden=true href=#기타>#</a></h1>
-<p>위의 내장 함수들은 32비트 기준이며 long 타입과 long long 타입은 __builtin_ffs<strong>ll</strong>과 같이 l, ll 접미사를 붙인다.</p>
-<p>*nix 계열에서는 보통 <a href=https://en.wikipedia.org/wiki/64-bit_computing#64-bit_data_models>LP64 모델</a>을 사용하며 long 또는 long long을 사용하면 64비트가 된다.</p>
+<p>위의 내장 함수들은 32비트 기준이며 long 타입과 long long 타입은 __builtin_ffs<strong>ll</strong>과 같이 l, ll 접미사를 붙여줘야 한다.</p>
+<p>*nix 계열에서는 <a href=https://en.wikipedia.org/wiki/64-bit_computing#64-bit_data_models>LP64 모델</a>을 사용하며 L, LL, ULL 등의 접미사를 사용하면 64비트가 된다.</p>
 <p>1 대신 0을 찾는등 반대의 경우는 Bitwise NOT(~) 연산으로 비트를 뒤집으면 된다.</p>
 <p>그 외에도 아래의 popcount 구현처럼 많은 bit hack들이 존재한다.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-c data-lang=c><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span><span style=color:#66d9ef>int</span> <span style=color:#a6e22e>swar</span>(<span style=color:#66d9ef>uint32_t</span> i) {
@@ -167,6 +173,7 @@
 <footer class=post-footer>
 <ul class=post-tags>
 <li><a href=https://zshchun.github.io/tags/c/>c</a></li>
+<li><a href=https://zshchun.github.io/tags/assembly/>assembly</a></li>
 <li><a href=https://zshchun.github.io/tags/bithacks/>bithacks</a></li>
 </ul>
 <nav class=paginav>

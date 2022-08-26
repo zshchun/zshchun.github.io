@@ -13,7 +13,7 @@
       <pubDate>Wed, 10 Aug 2022 00:51:28 +0900</pubDate>
       
       <guid>https://zshchun.github.io/posts/linux-syscall-list-x86/arm/</guid>
-      <description>Shellcode를 직접 만들거나 Linux syscall을 직접 핸들링</description>
+      <description>특수한 상환에서 표준 C 라이브러리를 통하지 않고 linux syscall을</description>
     </item>
     
   </channel>
