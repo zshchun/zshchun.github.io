@@ -30,7 +30,7 @@
 <meta name=twitter:title content="파이썬 import time 최적화">
 <meta name=twitter:description content="파이썬 스크립트에서 시작시간이 좀 느려서 최적화를 해보았다. 파이썬">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zshchun.github.io/posts/"},{"@type":"ListItem","position":2,"name":"파이썬 import time 최적화","item":"https://zshchun.github.io/posts/%ED%8C%8C%EC%9D%B4%EC%8D%AC-import-time-%EC%B5%9C%EC%A0%81%ED%99%94/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"파이썬 import time 최적화","name":"파이썬 import time 최적화","description":"파이썬 스크립트에서 시작시간이 좀 느려서 최적화를 해보았다. 파이썬","keywords":["shell","python"],"articleBody":"파이썬 스크립트에서 시작시간이 좀 느려서 최적화를 해보았다.\n파이썬에는 실행시간 측정을 위해 cProfile과 -X importime 과 같은 좋은 기능이 있다.\n여기서는 실행 시간보다 라이브러리의 로딩 시간을 알아보기 위해 먼저 사용되는 라이브러리를 확인했다.\n1$ grep import * | cut -d: -f2 | cut -d\\  -f2 | sort | uniq 2 3aiohttp 4argparse 5asyncio 6concurrent.futures 7... 스크립트로 사용되는 라이브러리들의 import time을 확인할 수 있었다.\n1#!/bin/bash 2for module in aiohttp argparse asyncio \\ 3 concurrent.futures Cryptodome.Cipher \\ 4 datetime getpass json lxml operator \\ 5 os random re sqlite3 subprocess sys \\ 6 time tomli websockets bs4 7do 8 (time python3 -c \"import $module\") 2\u00261 | \\ 9 awk \"/real/ {print sprintf(\\\"%-20s\\\", \\\"$module\\\") \\$2}\" 10done | sort -drk 2 결과는 다음과 같다.\naiohttp 0m0.375s bs4 0m0.225s Cryptodome.Cipher 0m0.159s asyncio 0m0.084s concurrent.futures 0m0.036s tomli 0m0.033s websockets 0m0.027s argparse 0m0.027s subprocess 0m0.026s json 0m0.025s re 0m0.023s sqlite3 0m0.021s getpass 0m0.021s random 0m0.018s datetime 0m0.017s lxml 0m0.016s operator 0m0.015s sys 0m0.015s time 0m0.014s os 0m0.014s 시작 시간을 많이 차지하는 aiohttp, beautifulsoup, Cryptodome 세 라이브러리만 벌써 0.75 초를 사용하고 있었다.\nAES가 목적인 Cryptodome.Cipher는 당장 필요가 없어 제거했다. 필요한 경우 import time이 짧은 cryptography나 pyaes로 대체 가능하다.\nHTTP 클라이언트/서버 라이브러리인 aiohttp에 비해 경량화 클라이언트인 aiosonic으로 교체해 보았지만 아쉬운 부분이 있어서 남겨두었다.\nHTML 파싱을 위한 Beautiful Soup은 lxml으로 대체해서 0.2s 정도 단축할 수 있었다.\n일부 컴퓨터 환경에서 시작 시간이 대략 0.3초 정도 줄어들었다.\n","wordCount":"499","inLanguage":"en","datePublished":"2022-08-26T22:09:10+09:00","dateModified":"2022-08-26T22:09:10+09:00","author":{"@type":"Person","name":"Seunghwan Chun"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zshchun.github.io/posts/%ED%8C%8C%EC%9D%B4%EC%8D%AC-import-time-%EC%B5%9C%EC%A0%81%ED%99%94/"},"publisher":{"@type":"Organization","name":"sh","logo":{"@type":"ImageObject","url":"https://zshchun.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"파이썬 import time 최적화","name":"파이썬 import time 최적화","description":"파이썬 스크립트에서 시작시간이 좀 느려서 최적화를 해보았다. 파이썬","keywords":["shell","python"],"articleBody":"파이썬 스크립트에서 시작시간이 좀 느려서 최적화를 해보았다.\n파이썬에는 실행시간 측정을 위해 cProfile과 -X importime 과 같은 좋은 기능이 있다.\n여기서는 실행 시간보다 라이브러리의 로딩 시간을 알아보기 위해 먼저 사용되는 라이브러리를 확인했다.\n1$ grep import * | cut -d: -f2 | cut -d\\  -f2 | sort | uniq 2 3aiohttp 4argparse 5asyncio 6concurrent.futures 7... 간단한 스크립트로 사용되는 라이브러리들의 import time을 확인했다.\n1#!/bin/bash 2for module in aiohttp argparse asyncio \\ 3 concurrent.futures Cryptodome.Cipher \\ 4 datetime getpass json lxml operator \\ 5 os random re sqlite3 subprocess sys \\ 6 time tomli websockets bs4 7do 8 (time python3 -c \"import $module\") 2\u00261 | \\ 9 awk \"/real/ {print sprintf(\\\"%-20s\\\", \\\"$module\\\") \\$2}\" 10done | sort -drk 2 결과는 다음과 같다.\naiohttp 0m0.375s bs4 0m0.225s Cryptodome.Cipher 0m0.159s asyncio 0m0.084s concurrent.futures 0m0.036s tomli 0m0.033s websockets 0m0.027s argparse 0m0.027s subprocess 0m0.026s json 0m0.025s re 0m0.023s sqlite3 0m0.021s getpass 0m0.021s random 0m0.018s datetime 0m0.017s lxml 0m0.016s operator 0m0.015s sys 0m0.015s time 0m0.014s os 0m0.014s aiohttp, beautifulsoup, Cryptodome 세 라이브러리만 벌써 750ms 이상 사용하고 있었다.\nAES 암호화를 위한 Cryptodome.Cipher는 당장 필요가 없어 제거했다. 필요한 경우 import time이 짧은 cryptography나 pyaes로 대체 가능하다.\nHTTP 클라이언트/서버 라이브러리인 aiohttp에 비해 경량화 클라이언트인 aiosonic으로 교체해 보았지만 아쉬운 부분이 있어서 남겨두었다.\nHTML 파싱을 위한 Beautiful Soup은 lxml으로 대체해서 0.2s 정도 단축할 수 있었다.\n일부 컴퓨터 환경에서 시작 시간이 대략 0.3초 정도 줄어들었다.\n","wordCount":"488","inLanguage":"en","datePublished":"2022-08-26T22:09:10+09:00","dateModified":"2022-08-26T22:09:10+09:00","author":{"@type":"Person","name":"Seunghwan Chun"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zshchun.github.io/posts/%ED%8C%8C%EC%9D%B4%EC%8D%AC-import-time-%EC%B5%9C%EC%A0%81%ED%99%94/"},"publisher":{"@type":"Organization","name":"sh","logo":{"@type":"ImageObject","url":"https://zshchun.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -69,7 +69,7 @@
 <h1 class=post-title>
 파이썬 import time 최적화
 </h1>
-<div class=post-meta><span title="2022-08-26 22:09:10 +0900 KST">2022/08/26</span>&nbsp;·&nbsp;499 words&nbsp;·&nbsp;Seunghwan Chun
+<div class=post-meta><span title="2022-08-26 22:09:10 +0900 KST">2022/08/26</span>&nbsp;·&nbsp;488 words&nbsp;·&nbsp;Seunghwan Chun
 </div>
 </header>
 <div class=post-content><p>파이썬 스크립트에서 시작시간이 좀 느려서 최적화를 해보았다.</p>
@@ -82,7 +82,7 @@
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5</span>asyncio
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6</span>concurrent.futures
 <span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7</span>...
-</code></pre></div><p>스크립트로 사용되는 라이브러리들의 import time을 확인할 수 있었다.</p>
+</code></pre></div><p>간단한 스크립트로 사용되는 라이브러리들의 import time을 확인했다.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span style=color:#75715e>#!/bin/bash
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span><span style=color:#75715e></span><span style=color:#66d9ef>for</span> module in aiohttp argparse asyncio <span style=color:#ae81ff>\
 </span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span><span style=color:#ae81ff></span>        concurrent.futures Cryptodome.Cipher <span style=color:#ae81ff>\
@@ -114,8 +114,8 @@ operator            0m0.015s
 sys                 0m0.015s
 time                0m0.014s
 os                  0m0.014s
-</code></pre><p>시작 시간을 많이 차지하는 aiohttp, beautifulsoup, Cryptodome 세 라이브러리만 벌써 0.75 초를 사용하고 있었다.</p>
-<p>AES가 목적인 <a href=https://pycryptodome.readthedocs.io/en/latest/src/cipher/cipher.html>Cryptodome.Cipher</a>는 당장 필요가 없어 제거했다. 필요한 경우 import time이 짧은 <a href=https://github.com/pyca/cryptography>cryptography</a>나 <a href=https://github.com/ricmoo/pyaes>pyaes</a>로 대체 가능하다.</p>
+</code></pre><p>aiohttp, beautifulsoup, Cryptodome 세 라이브러리만 벌써 750ms 이상 사용하고 있었다.</p>
+<p>AES 암호화를 위한 <a href=https://pycryptodome.readthedocs.io/en/latest/src/cipher/cipher.html>Cryptodome.Cipher</a>는 당장 필요가 없어 제거했다. 필요한 경우 import time이 짧은 <a href=https://github.com/pyca/cryptography>cryptography</a>나 <a href=https://github.com/ricmoo/pyaes>pyaes</a>로 대체 가능하다.</p>
 <p>HTTP 클라이언트/서버 라이브러리인 <a href=https://docs.aiohttp.org/en/stable/>aiohttp</a>에 비해 경량화 클라이언트인 <a href=https://github.com/sonic182/aiosonic>aiosonic</a>으로 교체해 보았지만 아쉬운 부분이 있어서 남겨두었다.</p>
 <p>HTML 파싱을 위한 <a href=https://www.crummy.com/software/BeautifulSoup/bs4/doc/>Beautiful Soup</a>은 <a href=https://lxml.de/>lxml</a>으로 대체해서 0.2s 정도 단축할 수 있었다.</p>
 <p>일부 컴퓨터 환경에서 시작 시간이 대략 0.3초 정도 줄어들었다.</p>
@@ -126,6 +126,11 @@ os                  0m0.014s
 <li><a href=https://zshchun.github.io/tags/python/>python</a></li>
 </ul>
 <nav class=paginav>
+<a class=prev href=https://zshchun.github.io/posts/mprotect%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%BD%94%EB%93%9C-%EC%8B%A4%ED%96%89/>
+<span class=title>« Prev</span>
+<br>
+<span>mprotect를 이용한 코드 실행</span>
+</a>
 <a class=next href=https://zshchun.github.io/posts/bin/sh%EC%99%80-/bin/bash%EC%9D%98-%EC%B0%A8%EC%9D%B4/>
 <span class=title>Next »</span>
 <br>
