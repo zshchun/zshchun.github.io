@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>toolchain on sh</title>
+    <link>https://zshchun.github.io/tags/toolchain/</link>
+    <description>Recent content in toolchain on sh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 08 Sep 2022 18:57:15 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/tags/toolchain/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>musl&#43;gcc로 바이너리 빌드하기</title>
+      <link>https://zshchun.github.io/posts/musl-gcc%EB%A1%9C-%EB%B0%94%EC%9D%B4%EB%84%88%EB%A6%AC-%EB%B9%8C%EB%93%9C%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Thu, 08 Sep 2022 18:57:15 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/posts/musl-gcc%EB%A1%9C-%EB%B0%94%EC%9D%B4%EB%84%88%EB%A6%AC-%EB%B9%8C%EB%93%9C%ED%95%98%EA%B8%B0/</guid>
+      <description>musl은 glibc와 같은 C 표준 라이브러리로 가볍고 빠른 것이 특</description>
+    </item>
+    
+  </channel>
+</rss>

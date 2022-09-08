@@ -6,7 +6,25 @@
     <description>Recent content in Tags on sh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 03 Sep 2022 00:29:41 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Sep 2022 18:57:15 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>libc</title>
+      <link>https://zshchun.github.io/tags/libc/</link>
+      <pubDate>Thu, 08 Sep 2022 18:57:15 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/tags/libc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>toolchain</title>
+      <link>https://zshchun.github.io/tags/toolchain/</link>
+      <pubDate>Thu, 08 Sep 2022 18:57:15 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/tags/toolchain/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>hack</title>
       <link>https://zshchun.github.io/tags/hack/</link>
