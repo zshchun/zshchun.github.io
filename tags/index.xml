@@ -8,6 +8,15 @@
     <language>ko-kr</language>
     <lastBuildDate>Thu, 08 Sep 2022 18:57:15 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>c</title>
+      <link>https://zshchun.github.io/tags/c/</link>
+      <pubDate>Thu, 08 Sep 2022 18:57:15 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/tags/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>libc</title>
       <link>https://zshchun.github.io/tags/libc/</link>
       <pubDate>Thu, 08 Sep 2022 18:57:15 +0900</pubDate>
@@ -112,15 +121,6 @@
       <pubDate>Mon, 08 Aug 2022 01:05:40 +0900</pubDate>
       
       <guid>https://zshchun.github.io/tags/bithacks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>c</title>
-      <link>https://zshchun.github.io/tags/c/</link>
-      <pubDate>Mon, 08 Aug 2022 01:05:40 +0900</pubDate>
-      
-      <guid>https://zshchun.github.io/tags/c/</guid>
       <description></description>
     </item>
     
