@@ -76,7 +76,7 @@
       <pubDate>Thu, 14 Jul 2022 00:41:51 +0900</pubDate>
       
       <guid>https://zshchun.github.io/posts/map%EA%B3%BC-unordered-map%EC%9D%98-%EC%B0%A8%EC%9D%B4/</guid>
-      <description>요약 map은 순서를 보장하지만 unordered_map은 순서</description>
+      <description>비교 map unordered_map 순서 오름차순 정렬 정렬 없음 구현 트리 구조 해시 테이블 탐색 시</description>
     </item>
     
     <item>
