@@ -4,7 +4,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
 <title>Windows Terminal+WSL2 에서 shift-enter 입력방법 | sh</title>
-<meta name=keywords content="windows,windows terminal">
+<meta name=keywords content="wsl,windows terminal">
 <meta name=description content="Windows terminal 에서 shift-enter, shift-alt-enter 키입력을 위해서는 settings.json 에서 다음을 추가한다. Windows terminal -> 설정">
 <meta name=author content="Seunghwan Chun">
 <link rel=canonical href=https://zshchun.github.io/posts/windows-terminal-wsl2-%EC%97%90%EC%84%9C-shift-enter-%EC%9E%85%EB%A0%A5%EB%B0%A9%EB%B2%95/>
@@ -30,7 +30,7 @@
 <meta name=twitter:title content="Windows Terminal+WSL2 에서 shift-enter 입력방법">
 <meta name=twitter:description content="Windows terminal 에서 shift-enter, shift-alt-enter 키입력을 위해서는 settings.json 에서 다음을 추가한다. Windows terminal -> 설정">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zshchun.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Windows Terminal+WSL2 에서 shift-enter 입력방법","item":"https://zshchun.github.io/posts/windows-terminal-wsl2-%EC%97%90%EC%84%9C-shift-enter-%EC%9E%85%EB%A0%A5%EB%B0%A9%EB%B2%95/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Windows Terminal+WSL2 에서 shift-enter 입력방법","name":"Windows Terminal\u002bWSL2 에서 shift-enter 입력방법","description":"Windows terminal 에서 shift-enter, shift-alt-enter 키입력을 위해서는 settings.json 에서 다음을 추가한다. Windows terminal -\u0026gt; 설정","keywords":["windows","windows terminal"],"articleBody":"Windows terminal 에서 shift-enter, shift-alt-enter 키입력을 위해서는 settings.json 에서 다음을 추가한다.\n Windows terminal - 설정 - Json 파일 열기  1{ \"command\": {\"action\": \"sendInput\", \"input\": \"\\u001b[13;2u\" }, \"keys\": \"shift+enter\" }, 2{ \"command\": {\"action\": \"sendInput\", \"input\": \"\\u001b[13;5u\" }, \"keys\": \"ctrl+enter\" }, 3{ \"command\": {\"action\": \"sendInput\", \"input\": \"\\u001b[13;6u\" }, \"keys\": \"ctrl+shift+enter\" }, 4{ \"command\": {\"action\": \"sendInput\", \"input\": \"\\u001b\\u001b[13;2u\" }, \"keys\": \"shift+alt+enter\" }, 참조 Shift+Enter always submits, breaking PSReadline features ANSI Escape Sequences\n","wordCount":"87","inLanguage":"en","datePublished":"2022-05-31T21:18:14+09:00","dateModified":"2022-05-31T21:18:14+09:00","author":{"@type":"Person","name":"Seunghwan Chun"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zshchun.github.io/posts/windows-terminal-wsl2-%EC%97%90%EC%84%9C-shift-enter-%EC%9E%85%EB%A0%A5%EB%B0%A9%EB%B2%95/"},"publisher":{"@type":"Organization","name":"sh","logo":{"@type":"ImageObject","url":"https://zshchun.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Windows Terminal+WSL2 에서 shift-enter 입력방법","name":"Windows Terminal\u002bWSL2 에서 shift-enter 입력방법","description":"Windows terminal 에서 shift-enter, shift-alt-enter 키입력을 위해서는 settings.json 에서 다음을 추가한다. Windows terminal -\u0026gt; 설정","keywords":["wsl","windows terminal"],"articleBody":"Windows terminal 에서 shift-enter, shift-alt-enter 키입력을 위해서는 settings.json 에서 다음을 추가한다.\n Windows terminal - 설정 - Json 파일 열기  1{ \"command\": {\"action\": \"sendInput\", \"input\": \"\\u001b[13;2u\" }, \"keys\": \"shift+enter\" }, 2{ \"command\": {\"action\": \"sendInput\", \"input\": \"\\u001b[13;5u\" }, \"keys\": \"ctrl+enter\" }, 3{ \"command\": {\"action\": \"sendInput\", \"input\": \"\\u001b[13;6u\" }, \"keys\": \"ctrl+shift+enter\" }, 4{ \"command\": {\"action\": \"sendInput\", \"input\": \"\\u001b\\u001b[13;2u\" }, \"keys\": \"shift+alt+enter\" }, 참조 Shift+Enter always submits, breaking PSReadline features ANSI Escape Sequences\n","wordCount":"87","inLanguage":"en","datePublished":"2022-05-31T21:18:14+09:00","dateModified":"2022-05-31T21:18:14+09:00","author":{"@type":"Person","name":"Seunghwan Chun"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zshchun.github.io/posts/windows-terminal-wsl2-%EC%97%90%EC%84%9C-shift-enter-%EC%9E%85%EB%A0%A5%EB%B0%A9%EB%B2%95/"},"publisher":{"@type":"Organization","name":"sh","logo":{"@type":"ImageObject","url":"https://zshchun.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -86,7 +86,7 @@ Windows Terminal+WSL2 에서 shift-enter 입력방법
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://zshchun.github.io/tags/windows/>windows</a></li>
+<li><a href=https://zshchun.github.io/tags/wsl/>wsl</a></li>
 <li><a href=https://zshchun.github.io/tags/windows-terminal/>windows terminal</a></li>
 </ul>
 <nav class=paginav>
@@ -95,10 +95,10 @@ Windows Terminal+WSL2 에서 shift-enter 입력방법
 <br>
 <span>std::accumulate 사용시 유의사항</span>
 </a>
-<a class=next href=https://zshchun.github.io/posts/.net%EC%9D%98-aes-hw-%EA%B0%80%EC%86%8D-%EC%A7%80%EC%9B%90/>
+<a class=next href=https://zshchun.github.io/posts/net%EC%9D%98-aes-hw-%EA%B0%80%EC%86%8D-%EC%A7%80%EC%9B%90/>
 <span class=title>Next »</span>
 <br>
-<span>.NET의 AES HW 가속 지원</span>
+<span>NET의 AES HW 가속 지원</span>
 </a>
 </nav>
 </footer>

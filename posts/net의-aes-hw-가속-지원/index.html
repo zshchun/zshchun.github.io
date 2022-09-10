@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>.NET의 AES HW 가속 지원 | sh</title>
-<meta name=keywords content=".NET,crypto">
+<title>NET의 AES HW 가속 지원 | sh</title>
+<meta name=keywords content="dotnet,crypto">
 <meta name=description content="목적 AES 대칭키 알고리즘은 아키텍처에서 AES-NI와 같은 HW 가속 instruction">
 <meta name=author content="Seunghwan Chun">
-<link rel=canonical href=https://zshchun.github.io/posts/.net%EC%9D%98-aes-hw-%EA%B0%80%EC%86%8D-%EC%A7%80%EC%9B%90/>
+<link rel=canonical href=https://zshchun.github.io/posts/net%EC%9D%98-aes-hw-%EA%B0%80%EC%86%8D-%EC%A7%80%EC%9B%90/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.0d2ee8bb1bc6a8196da0f4036d74cedc1fb80d74ab9f6160fc44670f9b85dd9c.css integrity="sha256-DS7ouxvGqBltoPQDbXTO3B+4DXSrn2Fg/ERnD5uF3Zw=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://zshchun.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://zshchun.github.io/favicon-16x16.png>
@@ -20,17 +20,17 @@
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-228892904-1','auto'),ga('set','anonymizeIp',!0),ga('send','pageview'))</script><meta property="og:title" content=".NET의 AES HW 가속 지원">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-228892904-1','auto'),ga('set','anonymizeIp',!0),ga('send','pageview'))</script><meta property="og:title" content="NET의 AES HW 가속 지원">
 <meta property="og:description" content="목적 AES 대칭키 알고리즘은 아키텍처에서 AES-NI와 같은 HW 가속 instruction">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://zshchun.github.io/posts/.net%EC%9D%98-aes-hw-%EA%B0%80%EC%86%8D-%EC%A7%80%EC%9B%90/"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://zshchun.github.io/posts/net%EC%9D%98-aes-hw-%EA%B0%80%EC%86%8D-%EC%A7%80%EC%9B%90/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-03-03T01:24:30+09:00">
 <meta property="article:modified_time" content="2022-03-03T01:24:30+09:00"><meta property="og:site_name" content="sh">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content=".NET의 AES HW 가속 지원">
+<meta name=twitter:title content="NET의 AES HW 가속 지원">
 <meta name=twitter:description content="목적 AES 대칭키 알고리즘은 아키텍처에서 AES-NI와 같은 HW 가속 instruction">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zshchun.github.io/posts/"},{"@type":"ListItem","position":2,"name":".NET의 AES HW 가속 지원","item":"https://zshchun.github.io/posts/.net%EC%9D%98-aes-hw-%EA%B0%80%EC%86%8D-%EC%A7%80%EC%9B%90/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":".NET의 AES HW 가속 지원","name":".NET의 AES HW 가속 지원","description":"목적 AES 대칭키 알고리즘은 아키텍처에서 AES-NI와 같은 HW 가속 instruction","keywords":[".NET","crypto"],"articleBody":"목적 AES 대칭키 알고리즘은 아키텍처에서 AES-NI와 같은 HW 가속 instruction set을 제공하기도 한다.\n라이브러리에서 AES 가속을 지원한다면 프로그램의 수행속도를 줄일 수 있다.\n검색 결과 AesManaged는 AES HW 가속을 지원하고 AesCryptoServiceProvider 클래스는 AES 가속을 지원하지 않는 것을 확인해 확인하기 위해 간단한 테스트를 하였다.\n가정  AES의 HW 가속은 순수 SW 연산보다 현저히 빠를 것이다. .NET에서 AesCryptoServiceProvider class는 HW 가속을 지원하며 AesManaged class는 지원하지 않을 것이다. 작은 크기의 많은 AES 연산에서는 overhead로 HW 가속이 더 느릴수 있다.  .NET 4.8, 4KB x 100000 AES encryption 작은 크기에 큰 반복 횟수에서는 AesManaged가 더 빠른 결과를 보였다.\n   .NET 4.8 1(ms) 2 3 4 5     AesManaged 4968 4940 4947 4971 4939   AesCryptoServiceProvider 6395 6407 6399 6323 6322    .NET 4.8, 1MB x 1000 AES encryption 큰 크기에 낮은 반복 횟수의 암호화는 AES 가속이 되는 AesCryptoServiceProvider 클래스가 월등히 유리하다. 클래스만 변경했을 때 12배 이상 차이가 나는 것을 확인했다.\n   .NET 4.8 1(ms) 2 3 4 5     AesCryptoServiceProvider 1004 983 984 987 984   AesManaged 12468 12671 12436 12483 12436    Code  Linux \u0026 OpenSSL 리눅스 에서는 openssl cli로 HW 가속을 테스트할 수 있다.\n가능한 경우 EVP_ 접두사 함수들은 기본적으로 AES-NI 를 사용하며 AES_ 접두사 함수들은 사용하지 않는다.\n64바이트 이상에서 속도가 3배 이상 차이나는 것을 확인할 수 있다.\n1$ openssl speed -elapsed -evp aes-128-cbc 2type 16 bytes 64 bytes 256 bytes 1024 bytes 8192 bytes 16384 bytes 3aes-128-cbc 879157.61k 1346181.01k 1409330.52k 1448567.47k 1479671.81k 1460371.46k 4 5$ OPENSSL_ia32cap=\"~0x200000200000000\" openssl speed -elapsed -evp aes-128-cbc 6type 16 bytes 64 bytes 256 bytes 1024 bytes 8192 bytes 16384 bytes 7aes-128-cbc 409826.10k 425150.51k 428506.71k 429743.79k 429782.36k 429725.01k 결론  .NET 4.8 에서는 AesCryptoServiceProvider 쪽을 사용하는 것이 대개의 경우 더 유리하다. .NET 6.0도 테스트했지만 두 클래스의 속도가 400-600ms로 비슷한 결과가 나왔다. 6.0에서는 AesCryptoServiceProvider 클래스도 HW 가속을 지원하는 것이 아닐까 추측한다.  References  https://www.codeproject.com/Tips/844795/Measuring-the-performance-of-AES-implementations-i https://odetocode.com/blogs/scott/archive/2014/02/24/symmetric-encryption-benchmarks-with-c.aspx https://stackoverflow.com/questions/23444135/is-net-aesmanaged-cryptography-hardware-accelerated https://stackoverflow.com/questions/25284119/how-can-i-check-if-openssl-is-support-use-the-intel-aes-ni  ","wordCount":"628","inLanguage":"en","datePublished":"2022-03-03T01:24:30+09:00","dateModified":"2022-03-03T01:24:30+09:00","author":{"@type":"Person","name":"Seunghwan Chun"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zshchun.github.io/posts/.net%EC%9D%98-aes-hw-%EA%B0%80%EC%86%8D-%EC%A7%80%EC%9B%90/"},"publisher":{"@type":"Organization","name":"sh","logo":{"@type":"ImageObject","url":"https://zshchun.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zshchun.github.io/posts/"},{"@type":"ListItem","position":2,"name":"NET의 AES HW 가속 지원","item":"https://zshchun.github.io/posts/net%EC%9D%98-aes-hw-%EA%B0%80%EC%86%8D-%EC%A7%80%EC%9B%90/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"NET의 AES HW 가속 지원","name":"NET의 AES HW 가속 지원","description":"목적 AES 대칭키 알고리즘은 아키텍처에서 AES-NI와 같은 HW 가속 instruction","keywords":["dotnet","crypto"],"articleBody":"목적 AES 대칭키 알고리즘은 아키텍처에서 AES-NI와 같은 HW 가속 instruction set을 제공하기도 한다.\n라이브러리에서 AES 가속을 지원한다면 프로그램의 수행속도를 줄일 수 있다.\n검색 결과 AesManaged는 AES HW 가속을 지원하고 AesCryptoServiceProvider 클래스는 AES 가속을 지원하지 않는 것을 확인해 확인하기 위해 간단한 테스트를 하였다.\n가정  AES의 HW 가속은 순수 SW 연산보다 현저히 빠를 것이다. .NET에서 AesCryptoServiceProvider class는 HW 가속을 지원하며 AesManaged class는 지원하지 않을 것이다. 작은 크기의 많은 AES 연산에서는 overhead로 HW 가속이 더 느릴수 있다.  .NET 4.8, 4KB x 100000 AES encryption 작은 크기에 큰 반복 횟수에서는 AesManaged가 더 빠른 결과를 보였다.\n   .NET 4.8 1(ms) 2 3 4 5     AesManaged 4968 4940 4947 4971 4939   AesCryptoServiceProvider 6395 6407 6399 6323 6322    .NET 4.8, 1MB x 1000 AES encryption 큰 크기에 낮은 반복 횟수의 암호화는 AES 가속이 되는 AesCryptoServiceProvider 클래스가 월등히 유리하다. 클래스만 변경했을 때 12배 이상 차이가 나는 것을 확인했다.\n   .NET 4.8 1(ms) 2 3 4 5     AesCryptoServiceProvider 1004 983 984 987 984   AesManaged 12468 12671 12436 12483 12436    Code  Linux \u0026 OpenSSL 리눅스 에서는 openssl cli로 HW 가속을 테스트할 수 있다.\n가능한 경우 EVP_ 접두사 함수들은 기본적으로 AES-NI 를 사용하며 AES_ 접두사 함수들은 사용하지 않는다.\n64바이트 이상에서 속도가 3배 이상 차이나는 것을 확인할 수 있다.\n1$ openssl speed -elapsed -evp aes-128-cbc 2type 16 bytes 64 bytes 256 bytes 1024 bytes 8192 bytes 16384 bytes 3aes-128-cbc 879157.61k 1346181.01k 1409330.52k 1448567.47k 1479671.81k 1460371.46k 4 5$ OPENSSL_ia32cap=\"~0x200000200000000\" openssl speed -elapsed -evp aes-128-cbc 6type 16 bytes 64 bytes 256 bytes 1024 bytes 8192 bytes 16384 bytes 7aes-128-cbc 409826.10k 425150.51k 428506.71k 429743.79k 429782.36k 429725.01k 결론  .NET 4.8 에서는 AesCryptoServiceProvider 쪽을 사용하는 것이 대개의 경우 더 유리하다. .NET 6.0도 테스트했지만 두 클래스의 속도가 400-600ms로 비슷한 결과가 나왔다. 6.0에서는 AesCryptoServiceProvider 클래스도 HW 가속을 지원하는 것이 아닐까 추측한다.  References  https://www.codeproject.com/Tips/844795/Measuring-the-performance-of-AES-implementations-i https://odetocode.com/blogs/scott/archive/2014/02/24/symmetric-encryption-benchmarks-with-c.aspx https://stackoverflow.com/questions/23444135/is-net-aesmanaged-cryptography-hardware-accelerated https://stackoverflow.com/questions/25284119/how-can-i-check-if-openssl-is-support-use-the-intel-aes-ni  ","wordCount":"628","inLanguage":"en","datePublished":"2022-03-03T01:24:30+09:00","dateModified":"2022-03-03T01:24:30+09:00","author":{"@type":"Person","name":"Seunghwan Chun"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zshchun.github.io/posts/net%EC%9D%98-aes-hw-%EA%B0%80%EC%86%8D-%EC%A7%80%EC%9B%90/"},"publisher":{"@type":"Organization","name":"sh","logo":{"@type":"ImageObject","url":"https://zshchun.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -67,7 +67,7 @@
 <header class=post-header>
 <div class=breadcrumbs><a href=https://zshchun.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://zshchun.github.io/posts/>Posts</a></div>
 <h1 class=post-title>
-.NET의 AES HW 가속 지원
+NET의 AES HW 가속 지원
 </h1>
 <div class=post-meta><span title="2022-03-03 01:24:30 +0900 KST">2022/03/03</span>&nbsp;·&nbsp;628 words&nbsp;·&nbsp;Seunghwan Chun
 </div>
@@ -174,7 +174,7 @@
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://zshchun.github.io/tags/.net/>.NET</a></li>
+<li><a href=https://zshchun.github.io/tags/dotnet/>dotnet</a></li>
 <li><a href=https://zshchun.github.io/tags/crypto/>crypto</a></li>
 </ul>
 <nav class=paginav>
