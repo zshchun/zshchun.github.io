@@ -30,7 +30,7 @@
 <meta name=twitter:title content="mprotect를 이용한 코드 실행">
 <meta name=twitter:description content="mprotect는 메모리 영역에 대한 권한을 수정할 수 있다. 페이지">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://zshchun.github.io/posts/"},{"@type":"ListItem","position":2,"name":"mprotect를 이용한 코드 실행","item":"https://zshchun.github.io/posts/mprotect%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%BD%94%EB%93%9C-%EC%8B%A4%ED%96%89/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"mprotect를 이용한 코드 실행","name":"mprotect를 이용한 코드 실행","description":"mprotect는 메모리 영역에 대한 권한을 수정할 수 있다. 페이지","keywords":["hack","pwnable"],"articleBody":"mprotect는 메모리 영역에 대한 권한을 수정할 수 있다.\n페이지에 실행 권한(PROT_EXEC)을 주면 메모리 상에서 코드를 실행할 수 있다.\n간단한 C 코드로 메모리 상에서 Hello World를 실행해보자.\n payload는 stdout(fd=1)으로 “Hello World” 을 출력하고 종료(exit)한다.\n컴파일과 실행은 다음과 같다.\n1$ gcc mprotect-hello-world.c -o mprotect-hello-world 2$ ./mprotect-hello-world 3Hello World ARM 바이너리를 실행하려면 Ubuntu 기준으로 qemu-user와 컴파일러를 설치하면 된다.\n$ sudo apt install qemu-user gcc-aarch64-linux-gnu ARM64 바이너리의 실행은 다음 명령으로 실행할 수 있다.\n1$ aarch64-linux-gnu-gcc -static test.c -o test 2$ qemu-aarch64 ./test 3Hello World ","wordCount":"230","inLanguage":"en","datePublished":"2022-09-03T00:29:41+09:00","dateModified":"2022-09-03T00:29:41+09:00","author":{"@type":"Person","name":"Seunghwan Chun"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zshchun.github.io/posts/mprotect%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%BD%94%EB%93%9C-%EC%8B%A4%ED%96%89/"},"publisher":{"@type":"Organization","name":"sh","logo":{"@type":"ImageObject","url":"https://zshchun.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"mprotect를 이용한 코드 실행","name":"mprotect를 이용한 코드 실행","description":"mprotect는 메모리 영역에 대한 권한을 수정할 수 있다. 페이지","keywords":["hack","pwnable"],"articleBody":"mprotect는 메모리 영역에 대한 권한을 수정할 수 있다.\n페이지에 실행 권한(PROT_EXEC)을 주면 메모리 상에서 코드를 실행할 수 있다.\n간단한 C 코드로 메모리 상에서 Hello World를 실행해보자.\n payload는 stdout(fd=1)으로 “Hello World” 을 출력하고 종료(exit)한다.\n컴파일과 실행은 다음과 같다.\n$ gcc mprotect-hello-world.c -o mprotect-hello-world $ ./mprotect-hello-world Hello World ARM 바이너리를 실행하려면 Ubuntu 기준으로 qemu-user와 컴파일러를 설치하면 된다.\n$ sudo apt install qemu-user gcc-aarch64-linux-gnu ARM64 바이너리의 실행은 다음 명령으로 실행할 수 있다.\n$ aarch64-linux-gnu-gcc -static test.c -o test $ qemu-aarch64 ./test Hello World ","wordCount":"230","inLanguage":"en","datePublished":"2022-09-03T00:29:41+09:00","dateModified":"2022-09-03T00:29:41+09:00","author":{"@type":"Person","name":"Seunghwan Chun"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zshchun.github.io/posts/mprotect%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%BD%94%EB%93%9C-%EC%8B%A4%ED%96%89/"},"publisher":{"@type":"Organization","name":"sh","logo":{"@type":"ImageObject","url":"https://zshchun.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -78,15 +78,15 @@ mprotect를 이용한 코드 실행
 <script type=text/javascript src=https://gist.github.com/a43383a352a1dc75f7737fe215b87624.js></script>
 <p>payload는 stdout(fd=1)으로 &ldquo;Hello World&rdquo; 을 출력하고 종료(exit)한다.</p>
 <p>컴파일과 실행은 다음과 같다.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-sh data-lang=sh><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span>$ gcc mprotect-hello-world.c -o mprotect-hello-world
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>$ ./mprotect-hello-world
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>Hello World
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-sh data-lang=sh>$ gcc mprotect-hello-world.c -o mprotect-hello-world
+$ ./mprotect-hello-world
+Hello World
 </code></pre></div><p>ARM 바이너리를 실행하려면 Ubuntu 기준으로 qemu-user와 컴파일러를 설치하면 된다.</p>
 <pre tabindex=0><code>$ sudo apt install qemu-user gcc-aarch64-linux-gnu
 </code></pre><p>ARM64 바이너리의 실행은 다음 명령으로 실행할 수 있다.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-sh data-lang=sh><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1</span>$ aarch64-linux-gnu-gcc -static test.c -o test
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2</span>$ qemu-aarch64 ./test
-<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3</span>Hello World
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-sh data-lang=sh>$ aarch64-linux-gnu-gcc -static test.c -o test
+$ qemu-aarch64 ./test
+Hello World
 </code></pre></div>
 </div>
 <footer class=post-footer>
