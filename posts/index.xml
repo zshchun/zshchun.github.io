@@ -6,7 +6,16 @@
     <description>Recent content in Posts on sh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 10 Sep 2022 23:40:23 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Sep 2022 01:11:34 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>QEMU와 GDB를 이용한 Linux Kernel 디버깅</title>
+      <link>https://zshchun.github.io/posts/qemu%EC%99%80-gdb%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-linux-kernel-%EB%94%94%EB%B2%84%EA%B9%85/</link>
+      <pubDate>Sun, 18 Sep 2022 01:11:34 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/posts/qemu%EC%99%80-gdb%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-linux-kernel-%EB%94%94%EB%B2%84%EA%B9%85/</guid>
+      <description>Linux kernel를 디버깅 하는 방법으로 QEMU와 JTAG을 이용한</description>
+    </item>
+    
     <item>
       <title>Git에 commit시 자동으로 메세지 추가하기</title>
       <link>https://zshchun.github.io/posts/git%EC%97%90-commit%EC%8B%9C-%EC%9E%90%EB%8F%99%EC%9C%BC%EB%A1%9C-%EB%A9%94%EC%84%B8%EC%A7%80-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/</link>
