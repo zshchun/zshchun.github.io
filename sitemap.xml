@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://zshchun.github.io/docs/</loc>
+    <lastmod>2022-09-17T21:26:36+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://zshchun.github.io/</loc>
+    <lastmod>2022-09-17T21:26:36+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://zshchun.github.io/tags/git/</loc>
     <lastmod>2022-09-10T23:40:23+09:00</lastmod>
     <changefreq>daily</changefreq>
@@ -13,11 +23,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://zshchun.github.io/posts/</loc>
-    <lastmod>2022-09-10T23:40:23+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://zshchun.github.io/</loc>
     <lastmod>2022-09-10T23:40:23+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -169,11 +174,6 @@
   </url><url>
     <loc>https://zshchun.github.io/posts/net%EC%9D%98-aes-hw-%EA%B0%80%EC%86%8D-%EC%A7%80%EC%9B%90/</loc>
     <lastmod>2022-03-03T01:24:30+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://zshchun.github.io/docs/</loc>
-    <lastmod>2022-03-01T23:01:36+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
