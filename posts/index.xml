@@ -6,7 +6,16 @@
     <description>Recent content in Posts on sh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 18 Sep 2022 01:11:34 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Feb 2023 20:15:09 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>암호화된 파일의 판별</title>
+      <link>https://zshchun.github.io/posts/%EC%95%94%ED%98%B8%ED%99%94%EB%90%9C-%ED%8C%8C%EC%9D%BC%EC%9D%98-%ED%8C%90%EB%B3%84/</link>
+      <pubDate>Sun, 26 Feb 2023 20:15:09 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/posts/%EC%95%94%ED%98%B8%ED%99%94%EB%90%9C-%ED%8C%8C%EC%9D%BC%EC%9D%98-%ED%8C%90%EB%B3%84/</guid>
+      <description>파일이 어떤 파일인지 분석할때는 보통 Magic 값을 사용한다. Linux 기준으로는</description>
+    </item>
+    
     <item>
       <title>QEMU와 GDB를 이용한 Linux Kernel 디버깅</title>
       <link>https://zshchun.github.io/posts/qemu%EC%99%80-gdb%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-linux-kernel-%EB%94%94%EB%B2%84%EA%B9%85/</link>

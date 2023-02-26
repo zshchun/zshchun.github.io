@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://zshchun.github.io/posts/</loc>
+    <lastmod>2023-02-26T20:15:09+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://zshchun.github.io/</loc>
+    <lastmod>2023-02-26T20:15:09+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://zshchun.github.io/posts/%EC%95%94%ED%98%B8%ED%99%94%EB%90%9C-%ED%8C%8C%EC%9D%BC%EC%9D%98-%ED%8C%90%EB%B3%84/</loc>
+    <lastmod>2023-02-26T20:15:09+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://zshchun.github.io/tags/gdb/</loc>
     <lastmod>2022-09-18T01:11:34+09:00</lastmod>
     <changefreq>daily</changefreq>
@@ -12,22 +27,12 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://zshchun.github.io/posts/</loc>
-    <lastmod>2022-09-18T01:11:34+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://zshchun.github.io/tags/qemu/</loc>
     <lastmod>2022-09-18T01:11:34+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://zshchun.github.io/posts/qemu%EC%99%80-gdb%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-linux-kernel-%EB%94%94%EB%B2%84%EA%B9%85/</loc>
-    <lastmod>2022-09-18T01:11:34+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://zshchun.github.io/</loc>
     <lastmod>2022-09-18T01:11:34+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
