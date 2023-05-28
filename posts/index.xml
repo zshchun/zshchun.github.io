@@ -6,7 +6,16 @@
     <description>Recent content in Posts on sh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 26 Feb 2023 20:15:09 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 May 2023 00:45:23 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ccache</title>
+      <link>https://zshchun.github.io/posts/ccache/</link>
+      <pubDate>Mon, 29 May 2023 00:45:23 +0900</pubDate>
+      
+      <guid>https://zshchun.github.io/posts/ccache/</guid>
+      <description>개요 Build time을 줄이기 위해서는 다양한 방법이 존재한다. 여기서는</description>
+    </item>
+    
     <item>
       <title>암호화된 파일의 판별</title>
       <link>https://zshchun.github.io/posts/%EC%95%94%ED%98%B8%ED%99%94%EB%90%9C-%ED%8C%8C%EC%9D%BC%EC%9D%98-%ED%8C%90%EB%B3%84/</link>
