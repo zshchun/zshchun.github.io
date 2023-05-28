@@ -8,11 +8,11 @@
     <language>ko-kr</language>
     <lastBuildDate>Mon, 29 May 2023 00:45:23 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Ccache</title>
-      <link>https://zshchun.github.io/posts/ccache/</link>
+      <title>Ccache를 이용한 빌드 속도 향상</title>
+      <link>https://zshchun.github.io/posts/ccache%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B9%8C%EB%93%9C-%EC%86%8D%EB%8F%84-%ED%96%A5%EC%83%81/</link>
       <pubDate>Mon, 29 May 2023 00:45:23 +0900</pubDate>
       
-      <guid>https://zshchun.github.io/posts/ccache/</guid>
+      <guid>https://zshchun.github.io/posts/ccache%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B9%8C%EB%93%9C-%EC%86%8D%EB%8F%84-%ED%96%A5%EC%83%81/</guid>
       <description>개요 Build time을 줄이기 위해서는 다양한 방법이 존재한다. 여기서는</description>
     </item>
     
