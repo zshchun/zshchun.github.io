@@ -1,155 +1,131 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on sh</title>
     <link>https://zshchun.github.io/posts/</link>
     <description>Recent content in Posts on sh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 29 May 2023 00:45:23 +0900</lastBuildDate><atom:link href="https://zshchun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jan 2024 15:28:40 +0900</lastBuildDate>
+    <atom:link href="https://zshchun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wargame Ubuntu Dockerfile</title>
+      <link>https://zshchun.github.io/posts/wargame-ubuntu-dockerfile/</link>
+      <pubDate>Mon, 01 Jan 2024 15:28:40 +0900</pubDate>
+      <guid>https://zshchun.github.io/posts/wargame-ubuntu-dockerfile/</guid>
+      <description>개요 Wargame 중 heap 취약점이라던가 패키지 관련 dependency때문에</description>
+    </item>
     <item>
       <title>Ccache를 이용한 빌드 속도 향상</title>
       <link>https://zshchun.github.io/posts/ccache%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B9%8C%EB%93%9C-%EC%86%8D%EB%8F%84-%ED%96%A5%EC%83%81/</link>
       <pubDate>Mon, 29 May 2023 00:45:23 +0900</pubDate>
-      
       <guid>https://zshchun.github.io/posts/ccache%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B9%8C%EB%93%9C-%EC%86%8D%EB%8F%84-%ED%96%A5%EC%83%81/</guid>
       <description>개요 Build time을 줄이기 위해서는 다양한 방법이 존재한다. 여기서는</description>
     </item>
-    
     <item>
       <title>암호화된 파일의 판별</title>
       <link>https://zshchun.github.io/posts/%EC%95%94%ED%98%B8%ED%99%94%EB%90%9C-%ED%8C%8C%EC%9D%BC%EC%9D%98-%ED%8C%90%EB%B3%84/</link>
       <pubDate>Sun, 26 Feb 2023 20:15:09 +0900</pubDate>
-      
       <guid>https://zshchun.github.io/posts/%EC%95%94%ED%98%B8%ED%99%94%EB%90%9C-%ED%8C%8C%EC%9D%BC%EC%9D%98-%ED%8C%90%EB%B3%84/</guid>
       <description>파일이 어떤 파일인지 분석할때는 보통 Magic 값을 사용한다. Linux 기준으로는</description>
     </item>
-    
     <item>
       <title>QEMU와 GDB를 이용한 Linux Kernel 디버깅</title>
       <link>https://zshchun.github.io/posts/qemu%EC%99%80-gdb%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-linux-kernel-%EB%94%94%EB%B2%84%EA%B9%85/</link>
       <pubDate>Sun, 18 Sep 2022 01:11:34 +0900</pubDate>
-      
       <guid>https://zshchun.github.io/posts/qemu%EC%99%80-gdb%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-linux-kernel-%EB%94%94%EB%B2%84%EA%B9%85/</guid>
       <description>Linux kernel를 디버깅 하는 방법으로 QEMU와 JTAG을 이용한</description>
     </item>
-    
     <item>
       <title>Git에 commit시 자동으로 메세지 추가하기</title>
       <link>https://zshchun.github.io/posts/git%EC%97%90-commit%EC%8B%9C-%EC%9E%90%EB%8F%99%EC%9C%BC%EB%A1%9C-%EB%A9%94%EC%84%B8%EC%A7%80-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/</link>
       <pubDate>Sat, 10 Sep 2022 23:40:23 +0900</pubDate>
-      
       <guid>https://zshchun.github.io/posts/git%EC%97%90-commit%EC%8B%9C-%EC%9E%90%EB%8F%99%EC%9C%BC%EB%A1%9C-%EB%A9%94%EC%84%B8%EC%A7%80-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/</guid>
       <description>Git의 Hook 기능을 이용하면 commit되기 전에 자동으로 소스 파일</description>
     </item>
-    
     <item>
       <title>musl&#43;gcc로 빌드하기</title>
       <link>https://zshchun.github.io/posts/musl-gcc%EB%A1%9C-%EB%B9%8C%EB%93%9C%ED%95%98%EA%B8%B0/</link>
       <pubDate>Thu, 08 Sep 2022 18:57:15 +0900</pubDate>
-      
       <guid>https://zshchun.github.io/posts/musl-gcc%EB%A1%9C-%EB%B9%8C%EB%93%9C%ED%95%98%EA%B8%B0/</guid>
       <description>musl은 glibc와 같은 C 표준 라이브러리로 가볍고 빠른 것이 특</description>
     </item>
-    
     <item>
       <title>mprotect를 이용한 코드 실행</title>
       <link>https://zshchun.github.io/posts/mprotect%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%BD%94%EB%93%9C-%EC%8B%A4%ED%96%89/</link>
       <pubDate>Sat, 03 Sep 2022 00:29:41 +0900</pubDate>
-      
       <guid>https://zshchun.github.io/posts/mprotect%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%BD%94%EB%93%9C-%EC%8B%A4%ED%96%89/</guid>
       <description>mprotect는 메모리 영역에 대한 권한을 수정할 수 있다. 페이지</description>
     </item>
-    
     <item>
       <title>파이썬 import time 최적화</title>
       <link>https://zshchun.github.io/posts/%ED%8C%8C%EC%9D%B4%EC%8D%AC-import-time-%EC%B5%9C%EC%A0%81%ED%99%94/</link>
       <pubDate>Fri, 26 Aug 2022 22:09:10 +0900</pubDate>
-      
       <guid>https://zshchun.github.io/posts/%ED%8C%8C%EC%9D%B4%EC%8D%AC-import-time-%EC%B5%9C%EC%A0%81%ED%99%94/</guid>
       <description>파이썬 스크립트에서 시작시간이 좀 느려서 최적화를 해보았다. 파이썬</description>
     </item>
-    
     <item>
       <title>/bin/sh와 /bin/bash의 차이</title>
       <link>https://zshchun.github.io/posts/bin/sh%EC%99%80-/bin/bash%EC%9D%98-%EC%B0%A8%EC%9D%B4/</link>
       <pubDate>Thu, 11 Aug 2022 23:55:03 +0900</pubDate>
-      
       <guid>https://zshchun.github.io/posts/bin/sh%EC%99%80-/bin/bash%EC%9D%98-%EC%B0%A8%EC%9D%B4/</guid>
       <description>확장된 기능을 제공하는 /bin/bash 대신 /bin/sh를 사용해야 하는 경우가</description>
     </item>
-    
     <item>
       <title>큰 숫자의 구분자</title>
       <link>https://zshchun.github.io/posts/%ED%81%B0-%EC%88%AB%EC%9E%90%EC%9D%98-%EA%B5%AC%EB%B6%84%EC%9E%90/</link>
       <pubDate>Wed, 10 Aug 2022 21:25:40 +0900</pubDate>
-      
       <guid>https://zshchun.github.io/posts/%ED%81%B0-%EC%88%AB%EC%9E%90%EC%9D%98-%EA%B5%AC%EB%B6%84%EC%9E%90/</guid>
       <description>C++에서는 큰 숫자에서 가독성을 위해 구분자를 사용할 수 있다. C+</description>
     </item>
-    
     <item>
       <title>Linux syscall list (x86/arm)</title>
       <link>https://zshchun.github.io/posts/linux-syscall-list-x86/arm/</link>
       <pubDate>Wed, 10 Aug 2022 00:51:28 +0900</pubDate>
-      
       <guid>https://zshchun.github.io/posts/linux-syscall-list-x86/arm/</guid>
       <description>표준 C 라이브러리를 통하지 않고 linux syscall을 직접 핸들링해야</description>
     </item>
-    
     <item>
       <title>유용한 bit 관련 함수</title>
       <link>https://zshchun.github.io/posts/%EC%9C%A0%EC%9A%A9%ED%95%9C-bit-%EA%B4%80%EB%A0%A8-%ED%95%A8%EC%88%98/</link>
       <pubDate>Mon, 08 Aug 2022 01:05:40 +0900</pubDate>
-      
       <guid>https://zshchun.github.io/posts/%EC%9C%A0%EC%9A%A9%ED%95%9C-bit-%EA%B4%80%EB%A0%A8-%ED%95%A8%EC%88%98/</guid>
       <description>변수에서 Bit에서 0이나 1의 위치 또는 갯수를 구하는 경우 컴파일러</description>
     </item>
-    
     <item>
       <title>map과 unordered map의 차이</title>
       <link>https://zshchun.github.io/posts/map%EA%B3%BC-unordered-map%EC%9D%98-%EC%B0%A8%EC%9D%B4/</link>
       <pubDate>Thu, 14 Jul 2022 00:41:51 +0900</pubDate>
-      
       <guid>https://zshchun.github.io/posts/map%EA%B3%BC-unordered-map%EC%9D%98-%EC%B0%A8%EC%9D%B4/</guid>
       <description>비교 map unordered_map 순서 오름차순 정렬 정렬 없음 구현 트리 구조 해시 테이블 탐색 시</description>
     </item>
-    
     <item>
       <title>std::accumulate 사용시 유의사항</title>
       <link>https://zshchun.github.io/posts/stdaccumulate-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%9C%A0%EC%9D%98%EC%82%AC%ED%95%AD/</link>
       <pubDate>Sat, 04 Jun 2022 21:35:54 +0900</pubDate>
-      
       <guid>https://zshchun.github.io/posts/stdaccumulate-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%9C%A0%EC%9D%98%EC%82%AC%ED%95%AD/</guid>
       <description>std::accumulate() 결과가 예상과 다른 경우가 있다. 간단한 합을 구하는 코드를 살펴보자</description>
     </item>
-    
     <item>
       <title>Windows Terminal&#43;WSL2 에서 shift-enter 입력방법</title>
       <link>https://zshchun.github.io/posts/windows-terminal-wsl2-%EC%97%90%EC%84%9C-shift-enter-%EC%9E%85%EB%A0%A5%EB%B0%A9%EB%B2%95/</link>
       <pubDate>Tue, 31 May 2022 21:18:14 +0900</pubDate>
-      
       <guid>https://zshchun.github.io/posts/windows-terminal-wsl2-%EC%97%90%EC%84%9C-shift-enter-%EC%9E%85%EB%A0%A5%EB%B0%A9%EB%B2%95/</guid>
       <description>Windows terminal 에서 shift-enter, shift-alt-enter 키입력을 위해서는 settings.json 에서 다음을 추가한다. Windows terminal -&amp;gt; 설정</description>
     </item>
-    
     <item>
       <title>NET의 AES HW 가속 지원</title>
       <link>https://zshchun.github.io/posts/net%EC%9D%98-aes-hw-%EA%B0%80%EC%86%8D-%EC%A7%80%EC%9B%90/</link>
       <pubDate>Thu, 03 Mar 2022 01:24:30 +0900</pubDate>
-      
       <guid>https://zshchun.github.io/posts/net%EC%9D%98-aes-hw-%EA%B0%80%EC%86%8D-%EC%A7%80%EC%9B%90/</guid>
       <description>목적 AES 대칭키 알고리즘은 아키텍처에서 AES-NI와 같은 HW 가속 instruction</description>
     </item>
-    
     <item>
       <title>Text 압축 해제 속도 비교</title>
       <link>https://zshchun.github.io/posts/text-%EC%95%95%EC%B6%95-%ED%95%B4%EC%A0%9C-%EC%86%8D%EB%8F%84-%EB%B9%84%EA%B5%90/</link>
       <pubDate>Tue, 01 Mar 2022 21:50:13 +0900</pubDate>
-      
       <guid>https://zshchun.github.io/posts/text-%EC%95%95%EC%B6%95-%ED%95%B4%EC%A0%9C-%EC%86%8D%EB%8F%84-%EB%B9%84%EA%B5%90/</guid>
       <description>목표 대용량 텍스트의 압축 크기와 해제 속도의 수용가능한 절충점 찾기 multithreading</description>
     </item>
-    
   </channel>
 </rss>
